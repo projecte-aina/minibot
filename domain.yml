@@ -1,0 +1,44 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - praise
+
+responses:
+  utter_greet:
+  - text: "Hola! Com estàs?"
+  - text: "Ei! Com va?"
+  - text: "Ep! Com anem?"
+
+  utter_cheer_up:
+  - text: "Mira això si t'anima:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "T'ha anat bé?"
+  - text: "Estàs millor?"
+
+  utter_happy:
+  - text: "Genial, segueix així!"
+  - text: "Que bé, me n'alegro"
+
+  utter_goodbye:
+  - text: "Adéu"
+  - text: "Fins una altra!"
+
+  utter_iamabot:
+  - text: "Sóc un minibot, m'han fet amb Rasa i m'hi posaran veu ben aviat."
+  
+  utter_praise:
+  - text: "Gràcies :-).\nDe moment sóc un experiment, ja veurem què en sortirà."
+  - text: "Ets molt amable."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

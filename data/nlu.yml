@@ -1,0 +1,89 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ei!
+    - hi
+    - hello
+    - hola
+    - bon dia
+    - ep
+    - bona tarda
+    - bona nit
+    - ei, tu!
+    - epa
+    
+- intent: goodbye
+  examples: |
+    - adéu
+    - passi-ho bé
+    - dew
+    - a10
+    - bassa un bon dia
+    - goodbye
+    - ciao
+    - chao
+    - siau
+    - adéu siau
+    - fins una altra
+    - a la propera
+    - a la pròxima
+    - ens veiem
+    - ja parlem
+
+- intent: affirm
+  examples: |
+    - sí
+    - i tant
+    - oi tant
+    - correcte
+    - perfecte
+    - genial
+    - super
+    - ja hi pots pujar de peus
+    - és clar
+
+- intent: deny
+  examples: |
+    - no
+    - en absoult
+    - never
+    - no ho crec
+    - crec que no
+    - passo
+    - ni parlar-ne
+
+- intent: mood_great
+  examples: |
+    - fantàstic
+    - estic bé
+    - em sento bé
+    - estic genial
+    - bé, gràcies
+
+- intent: mood_unhappy
+  examples: |
+    - pfff, fatal
+    - estic molt trist
+    - com una merda
+    - de pena
+    
+- intent: bot_challenge
+  examples: |
+    - ets un bot?
+    - ets una persona?
+    - estic parlant amb un bot?
+    - estic parlant amb una persona?
+    - ets humà?
+    - com et dius?
+    
+- intent: praise
+  examples: |
+    - ets una monada
+    - ets molt mono
+    - que xulo!
+    - te'n surts molt bé
+    - ho fas molt bé
+    - caram, que guai
