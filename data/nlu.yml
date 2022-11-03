@@ -77,7 +77,15 @@ nlu:
     - estic parlant amb un bot?
     - estic parlant amb una persona?
     - ets humà?
+    - qui ets?
+    - què ets?
+    - per a què serveixes?
+    - què fas?
+    
+- intent: your_name
+  examples: |
     - com et dius?
+    - quin nom tens
     
 - intent: praise
   examples: |
@@ -87,3 +95,97 @@ nlu:
     - te'n surts molt bé
     - ho fas molt bé
     - caram, que guai
+
+- intent: insult
+  examples: |
+    - ets un inútil
+    - ets una merda
+    - no serveixes per a res
+    - el projecte Aina és una merda
+    - idiota
+    - estúpid
+    - quin xatbot més inútil
+    
+- intent: how_are_you
+  examples: |
+    - estic bé, i tu?
+    - com estàs?
+    - i tu, com estàs?
+    - què se sent, de ser un bot?
+    - i tu?
+    - com va?
+    - com anem?
+    
+- intent: out_of_scope
+  examples: |
+    - quina hora és?
+    - quan serà independent Catalunya?
+    - quan volaran els cotxes?
+    - qui serà el nou president?
+    - demà plourà?
+
+- intent: faq/aina
+  examples: |
+    - què és el projecte Aina?
+    - Què és això de l'Aina?
+    - de què va l'aina?
+    
+- intent: faq/objectius
+  examples: |
+    - quins objectius té el projecte?
+    - per què es fa l'Aina?
+    - què busca el projecte Aina?
+    - quin és l'objectiu?
+    
+- intent: faq/com
+  examples: |
+    - com ho fareu això?
+    - quina és l'estratègia?
+    - això com es fa?
+    - quin és el pla de treball?
+    - què esteu fent?
+    - com ho voleu aconseguir?
+    - com ho aconseguireu?
+
+- intent: faq/finan
+  examples: |
+    - quant val el projecte Aina?
+    - qui paga el projecte Aina?
+    - això qui ho paga?
+    - quin finançament té previst?
+    - quan val?
+    - què costa?
+    - quants diners val?
+    
+- intent: faq/gent
+  examples: |
+    - qui treballa en el projecte Aina?
+    - qui desenvolupa el projecte?
+    - qui ho fa?
+    
+- intent: faq/temps
+  examples: |
+    - quant de temps ha de durar el projecte Aina?
+    - quan s'acaba?
+    - quan va començar el projecte?
+    - s'acaba algun dia?
+    - quant dura?
+    
+- intent: faq/resultats
+  examples: |
+    - quins resultats heu obtingut?
+    - on són els resultats?
+    - què heu fet fins ara?
+    - on ho puc veure?
+    - on puc trobar els models?
+    - això on ho trobo?
+    - on són els datasets?
+    - on publiqueu els resultats?
+    
+- intent: faq/info
+  examples: |
+    - on puc trobar més informació?
+    - com puc estar al dia de les novetats?
+    - com puc saber les notícies?
+    - això on s'explica?
+    - on hi ha més info?

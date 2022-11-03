@@ -9,8 +9,16 @@ intents:
   - mood_unhappy
   - bot_challenge
   - praise
+  - insult
+  - how_are_you
+  - your_name
+  - faq
+  - out_of_scope
+  - nlu_fallback
 
 responses:
+
+### bàsics
   utter_greet:
   - text: "Hola! Com estàs?"
   - text: "Ei! Com va?"
@@ -31,14 +39,60 @@ responses:
   utter_goodbye:
   - text: "Adéu"
   - text: "Fins una altra!"
+  - text: "Fins aviat!"
+  - text: "Torna quan vulguis!"
 
   utter_iamabot:
-  - text: "Sóc un minibot, m'han fet amb Rasa i m'hi posaran veu ben aviat."
-  
+  - text: "Soc un bot de demostració del projecte Aina. Puc respondre algunes preguntes sobre el projecte."
+
+  utter_name:
+  - text: "Soc un bot de demostració del projecte Aina, encara no m'han posat nom."
+  - text: "No tinc nom, ja demanaré que me'n posin un."
+  - text: "Per alguna raó, no m'han posat nom. Devien anar amb presses, o així."
+
   utter_praise:
-  - text: "Gràcies :-).\nDe moment sóc un experiment, ja veurem què en sortirà."
+  - text: "Gràcies :-)"
   - text: "Ets molt amable."
 
+  utter_fine:
+  - text: "Uhm... soc un xatbot, no m'ho puc plantejar"
+  - text: "Ostres, no m'ho havia preguntat mai ningú! Estic bé, gràcies."
+  
+  utter_insult:
+  - text: "Si jo fos un humà, no aniria perdent el temps insultant els altres"
+  
+  utter_out_of_scope:
+  - text: "No tinc aquesta informació, però em pots preguntar coses sobre mi i sobre el projecte Aina"
+  
+  utter_fallback:
+  - text: "Ho sento, no t'he entès. Pots dir-ho amb unes altres paraules?"
+  
+### faq del projecte Aina
+
+  utter_faq/aina:
+  - text: "El projecte Aina és una iniciativa de Departament de la Vicepresidència i de Polítiques Digitals i Territori, amb la col·laboració del Barcelona Supercomputing Center, per impulsar la intel·ligència artificial en català."
+  
+  utter_faq/objectius:
+  - text: "L'objectiu del projecte Aina és desenvolupar la intel·ligència artificial en català, de manera que els ciutadans catalanoparlants hi tinguin accés en igualtat de condicions que els parlants d'altres llengües amb més recursos."
+
+  utter_faq/com:
+  - text: "Mitjançant el projecte Aina estem generant corpus i models informàtics de la llengua catalana i els posem a disposició de tothom, de manera que les empreses o col·lectius que creen aplicacions basades en la intel·ligència artificial, com ara assistents de veu, cercadors d’Internet, traductors i correctors automàtics, etcètera, puguin fer-ho fàcilment en català.\nTambé col·laborem amb la recerca en intel·ligència artificial en català, i treballem per situar el català en projectes internacionals."
+
+  utter_faq/finan:
+  - text: "El projecte té un pressupost global de 13,5 milions d'euros per al període 2020-2024."
+  
+  utter_faq/gent:
+  - text: "La unitat de Text Mining del Barcelona Supercomputing Center s'ocupa de la part tècnica del projecte."
+  
+  utter_faq/temps:
+  - text: "L'Aina va començar el 2020 i té una durada prevista de 4 anys."
+  
+  utter_faq/resultats:
+  - text: "Publiquem tot el que anem desenvolupant a les plataformes de referència del sector. A la pàgina web del projecte trobaràs tots els enllaços."
+  
+  utter_faq/info:
+  - text: "A la pàgina web de l'Aina hi ha tota la informació del projecte, amb els enllaços a les demostracions i als resultats. Per estar al dia de les novetats, ens pots seguir al twitter, o subscriure't al nostre butlletí de notícies."
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
