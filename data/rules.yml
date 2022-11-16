@@ -17,6 +17,11 @@ rules:
   - intent: praise
   - action: utter_praise
 
+- rule: thank you
+  steps:
+  - intent: thank_you
+  - action: utter_welcome
+  
 - rule: insult
   steps:
   - intent: insult

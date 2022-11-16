@@ -42,6 +42,7 @@ nlu:
     - perfecte
     - genial
     - super
+    - d'acord
     - ja hi pots pujar de peus
     - és clar
 
@@ -69,6 +70,17 @@ nlu:
     - estic molt trist
     - com una merda
     - de pena
+    - em vull morir
+    - psè
+    
+- intent: thank_you
+  examples: |
+    - gràcies
+    - merci
+    - mercès
+    - merces
+    - thanks
+    - t'ho agraeixo
     
 - intent: bot_challenge
   examples: |
@@ -81,11 +93,14 @@ nlu:
     - què ets?
     - per a què serveixes?
     - què fas?
+    - de què serveixes?
     
 - intent: your_name
   examples: |
     - com et dius?
     - quin nom tens
+    - tens nom?
+    - com et diuen?
     
 - intent: praise
   examples: |
@@ -98,13 +113,13 @@ nlu:
 
 - intent: insult
   examples: |
-    - ets un inútil
-    - ets una merda
+    - ets un [inútil](insult)
+    - ets una [merda](insult)
     - no serveixes per a res
-    - el projecte Aina és una merda
-    - idiota
-    - estúpid
-    - quin xatbot més inútil
+    - el projecte Aina és una [merda](insult)
+    - [idiota](insult)
+    - [estúpid](insult)
+    - quin xatbot més [inútil](insult)
     
 - intent: how_are_you
   examples: |
@@ -129,6 +144,8 @@ nlu:
     - què és el projecte Aina?
     - Què és això de l'Aina?
     - de què va l'aina?
+    - què és aina?
+    - qui és Aina?
     
 - intent: faq/objectius
   examples: |
@@ -136,6 +153,7 @@ nlu:
     - per què es fa l'Aina?
     - què busca el projecte Aina?
     - quin és l'objectiu?
+    - què feu?
     
 - intent: faq/com
   examples: |
@@ -146,6 +164,7 @@ nlu:
     - què esteu fent?
     - com ho voleu aconseguir?
     - com ho aconseguireu?
+    - què estan fent?
 
 - intent: faq/finan
   examples: |
@@ -156,20 +175,25 @@ nlu:
     - quan val?
     - què costa?
     - quants diners val?
+    - quin pressupost té?
     
 - intent: faq/gent
   examples: |
     - qui treballa en el projecte Aina?
     - qui desenvolupa el projecte?
     - qui ho fa?
+    - qui és el responsable de desenvolupar el projecte?
+    - qui lidera el projecte?
+
     
 - intent: faq/temps
   examples: |
     - quant de temps ha de durar el projecte Aina?
     - quan s'acaba?
     - quan va començar el projecte?
-    - s'acaba algun dia?
+    - s'acabarà algun dia?
     - quant dura?
+    - quant de temps està previst que duri el projecte?
     
 - intent: faq/resultats
   examples: |
@@ -181,6 +205,7 @@ nlu:
     - això on ho trobo?
     - on són els datasets?
     - on publiqueu els resultats?
+    - on hi ha els models?
     
 - intent: faq/info
   examples: |
@@ -189,3 +214,50 @@ nlu:
     - com puc saber les notícies?
     - això on s'explica?
     - on hi ha més info?
+    - com puc saber què s’està desenvolupant en aquest projecte?
+    
+- intent: faq/product
+  examples: |
+    - L'[Alexa](product) parlarà català?
+    - Quan tindrem [google maps](product) en català?
+    - Per què [Amazon](product) no ofereix productes en català?
+    
+- intent: faq/ajudar
+  examples: |
+    - Què puc fer perquè l'[Alexa](product) parli català?
+    - Com puc ajudar al projecte Aina?
+    - Podem fer alguna cosa per ajudar el projecte?
+    - Puc col·laborar?
+    - Què hem de fer per col·laborar amb vosaltres?
+    - Com podem ajudar?
+    
+- intent: faq/commonvoice
+  examples: |
+    - Què és el corpus commonvoice?
+    - Què és això del common voice?
+    - què he de fer per participar a aquest corpus?
+    - vull participar a la campanya La nostra llengua és la teva veu
+
+### entitats
+
+- synonym: insult
+  examples: |
+    - idiota
+    - imbecil
+    - imbècil
+    - gilipolles
+    - capullo
+    - puta
+    - guarra
+    - burra
+    - petarda
+    - mongola
+    - merda
+
+- synonym: product
+  examples: |
+    - Amazon
+    - Alexia
+    - Google
+    - googlemaps
+    - Google Assistant

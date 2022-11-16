@@ -15,6 +15,11 @@ intents:
   - faq
   - out_of_scope
   - nlu_fallback
+  - thank_you
+  
+entities:
+  - insult
+  - product
 
 responses:
 
@@ -33,7 +38,7 @@ responses:
   - text: "Estàs millor?"
 
   utter_happy:
-  - text: "Genial, segueix així!"
+  - text: "Genial, que duri!"
   - text: "Que bé, me n'alegro"
 
   utter_goodbye:
@@ -63,9 +68,17 @@ responses:
   
   utter_out_of_scope:
   - text: "No tinc aquesta informació, però em pots preguntar coses sobre mi i sobre el projecte Aina"
+  - text: "Ostres, això no ho sé."
+  - text: "Vaja, aquesta informació no la tinc, però puc respondre a preguntes sobre el projecte Aina"
   
   utter_fallback:
   - text: "Ho sento, no t'he entès. Pots dir-ho amb unes altres paraules?"
+  
+  utter_welcome:
+  - text: "De res :-)"
+  - text: "A disposar"
+  - text: "M'encanta haver-te ajudat"
+  - text: "Celebro haver estat útil"
   
 ### faq del projecte Aina
 
@@ -92,6 +105,19 @@ responses:
   
   utter_faq/info:
   - text: "A la pàgina web de l'Aina hi ha tota la informació del projecte, amb els enllaços a les demostracions i als resultats. Per estar al dia de les novetats, ens pots seguir al twitter, o subscriure't al nostre butlletí de notícies."
+  
+  utter_faq/product:
+  - text: "Des del projecte Aina no podem modificar els productes comercials, però estem desenvolupant els recursos necessaris perquè les empreses puguin incorporar el català als seus productes."
+  
+  utter_faq/ajudar:
+  - text: "Pots ajudar a tirar endavant el projecte col·laborant amb el corpus Common Voice. Ens calen moltes veus!"
+  - text: "Ets molt amable de voler col·laborar. Pots donar-nos un cop de mà amb el corpus Common Voice."
+  - text: "Una bona manera d'ajudar-nos seria col·laborar amb el corpus Common Voice. Necessitem més veus, i validar els enregistraments que ja s'han fet."
+  - text: "Pots donar-nos un cop de mà amb el corpus Common Voice. Necessitem voluntaris per enregistrar frases, però també per validar les que ja s'han gravat!"
+  
+  utter_faq/commonvoice:
+  - text: "El Common Voice és un projecte de la fundació Mozilla per aconseguir un gran corpus de veus. Hi pots col·laborar enregistrant frases o validant les frases que han enregistrat altres usuaris."
+  - text: "El Common Voice és un gran corpus de veus. Necessitem que hi hagi representats tots els accents, per això ens pots ajudar gravant frases, o validant les frases que han gravat altres persones."
   
 session_config:
   session_expiration_time: 60
