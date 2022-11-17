@@ -3,7 +3,19 @@
 Bot petitet de prova, per intentar incorporar-li veu.
 
 ## Instruccions bàsiques
+0) crear en venv
+```
+python3 -m venv myvenv
+```
+
 1) activar el venv
+```
+source myvenv/bin/activate
+```
+Instal·lar els requirements si no s'ha fet abans:
+```
+pip install -r requirements
+```
 
 2) entrenar
 ```
@@ -21,6 +33,7 @@ rasa shell
 * rasa data validate: comprova la consistència de les dades
 * rasa test: avalua els models a partir de les converses de test (demoment no en tenim)
 * rasa interactive: fa una sessió d'aprenentatge interactiu
+* rasa shell nlu: per veure en el terminal les mètriques de cada interacció
 
 ## Per fer-lo córrer en un navegador
 1) Haver clonat [aquest repo](https://github.com/petr7555/rasa-dev-tutorial/) i instal·lat el venv.
