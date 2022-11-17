@@ -63,3 +63,17 @@ npx http-server .
 ## Documentació
 * [laguage support](https://rasa.com/docs/rasa/language-support/)
 * [installation](https://rasa.com/docs/rasa/installation/)
+
+## Build rasa docker image
+
+To build rasa docker image use: 
+
+```bash
+docker build -t bsctemu/aina-minibot:<YOUR_VERSION> bsctemu/aina-minibot:latest .
+```
+
+Then, push the image to docker hub:
+
+```bash
+docker push bsctemu/aina-minibot:<YOUR_VERSION>
+```
