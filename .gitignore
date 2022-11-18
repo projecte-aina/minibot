@@ -1,3 +1,5 @@
 .idea
 venv
 .rasa
+__pycache__/
+*.pyc

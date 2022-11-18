@@ -3,25 +3,33 @@ import uuid
 import base64
 from typing import Any, Awaitable, Callable, Dict, Iterable, List, Optional, Text
 
-from rasa.core.channels.channel import InputChannel
-from rasa.core.channels.channel import UserMessage, OutputChannel
+import os
+import urllib
+from urllib.request import urlopen, Request
+from urllib.parse import urlencode
+
+from rasa.core.channels.channel import InputChannel, UserMessage, OutputChannel
+from rasa.core.channels.socketio import SocketBlueprint
+from rasa.core.channels.socketio import SocketIOOutput
 
 from sanic import Blueprint, response
 from sanic.request import Request
-#from sanic.response import HTTPResponse
+from sanic.response import HTTPResponse
 from socketio import AsyncServer
 
 logger = logging.getLogger(__name__)
 
-class SocketVoiceBlueprint(Blueprint):
-    def __init__(self, sio: AsyncServer, socketio_path, *args, **kwargs):
-        self.sio = sio
-        self.socketio_path = socketio_path
-        super(SocketBlueprint, self).__init__(*args, **kwargs)
 
-    def register(self, app, options):
-        self.sio.attach(app, self.socketio_path)
-        super(SocketBlueprint, self).register(app, options)
+# class SocketVoiceBlueprint(Blueprint):
+#     def __init__(self, sio: AsyncServer, socketio_path, *args, **kwargs):
+#         self.sio = sio
+#         self.socketio_path = socketio_path
+#         super().__init__(*args, **kwargs)
+#
+#     def register(self, app, options):
+#         self.sio.attach(app, self.socketio_path)
+#         super().register(app, options)
+
 
 class SocketIOVoiceOutput(OutputChannel):
     @classmethod
@@ -38,30 +46,31 @@ class SocketIOVoiceOutput(OutputChannel):
         """Sends a message to the recipient using the bot event."""
 
         if response.get("text"):
-          q = {
-            'text': response['text']
-          }
-          if self.tts_voice:
-            q['speaker_id'] = self.tts_voice
-            q['style_wav']= None
+            q = {
+                'text': response['text']
+            }
+            if self.tts_voice:
+                q['speaker_id'] = self.tts_voice
+                q['style_wav'] = None
 
-          audioEndpoint = f"{self.tts_url}/api/tts/?{urlencode(q)}"
-          audio = urlopen(audioEndpoint).read()
-          logger.debug(f"_send_message- Calling Speech Endpoint: {audioEndpoint}")
+            audioEndpoint = f"{self.tts_url}/api/tts/?{urlencode(q)}"
+            audio = urlopen(audioEndpoint).read()
+            logger.debug(f"_send_message- Calling Speech Endpoint: {audioEndpoint}")
 
-          audioBase64 = base64.b64encode(audio).decode('ascii')
-          audioUri = "data:audio/wav;base64," + audioBase64
-          response['link'] = audioUri
+            audioBase64 = base64.b64encode(audio).decode('ascii')
+            audioUri = "data:audio/wav;base64," + audioBase64
+            response['link'] = audioUri
 
         await self.sio.emit(self.bot_message_evt, response, room=socket_id)
 
     async def send_text_message(
-        self, recipient_id: Text, text: Text, **kwargs: Any
+            self, recipient_id: Text, text: Text, **kwargs: Any
     ) -> None:
         """Send a message through this channel."""
 
         for message_part in text.strip().split("\n\n"):
             await self._send_audio_message(recipient_id, {"text": message_part})
+
 
 class SocketIOVoiceInput(InputChannel):
     """A socket.io input channel."""
@@ -84,14 +93,14 @@ class SocketIOVoiceInput(InputChannel):
         )
 
     def __init__(
-        self,
-        user_message_evt: Text = "user_uttered",
-        bot_message_evt: Text = "bot_uttered",
-        namespace: Optional[Text] = None,
-        session_persistence: bool = False,
-        socketio_path: Optional[Text] = "/socket.io",
-        tts_url: Text = None,
-        tts_voice: Optional[Text] = False,
+            self,
+            user_message_evt: Text = "user_uttered",
+            bot_message_evt: Text = "bot_uttered",
+            namespace: Optional[Text] = None,
+            session_persistence: bool = False,
+            socketio_path: Optional[Text] = "/socket.io",
+            tts_url: Text = None,
+            tts_voice: Optional[Text] = False,
     ):
         self.bot_message_evt = bot_message_evt
         self.session_persistence = session_persistence
@@ -117,12 +126,12 @@ class SocketIOVoiceInput(InputChannel):
     '''
 
     def blueprint(
-        self, on_new_message: Callable[[UserMessage], Awaitable[Any]]
+            self, on_new_message: Callable[[UserMessage], Awaitable[Any]]
     ) -> Blueprint:
         # Workaround so that socketio works with requests from other origins.
         # https://github.com/miguelgrinberg/python-socketio/issues/205#issuecomment-493769183
         sio = AsyncServer(async_mode="sanic", cors_allowed_origins=[])
-        socketio_webhook = SocketVoiceBlueprint(
+        socketio_webhook = SocketBlueprint(
             sio, self.socketio_path, "socketio_webhook", __name__
         )
 
@@ -152,16 +161,16 @@ class SocketIOVoiceInput(InputChannel):
             await sio.emit("session_confirm", data["session_id"], room=sid)
             logger.debug(f"User {sid} connected to socketIO endpoint.")
 
-
     def blueprint(
-        self, on_new_message: Callable[[UserMessage], Awaitable[Any]]
+            self, on_new_message: Callable[[UserMessage], Awaitable[Any]]
     ) -> Blueprint:
         # Workaround so that socketio works with requests from other origins.
         # https://github.com/miguelgrinberg/python-socketio/issues/205#issuecomment-493769183
         sio = AsyncServer(async_mode="sanic", cors_allowed_origins=[])
-        socketio_webhook = SocketVoiceBlueprint(
+        socketio_webhook = SocketBlueprint(
             sio, self.socketio_path, "socketio_webhook", __name__
         )
+
 
         # make sio object static to use in get_output_channel
         self.sio = sio
@@ -194,8 +203,9 @@ class SocketIOVoiceInput(InputChannel):
 
         @sio.on('user_uttered', namespace=self.namespace)
         async def handle_message(sid, data):
+            print(data)
 
-            output_channel = SocketIOOutput(sio, sid, self.bot_message_evt, data['message'])
+            output_channel = SocketIOVoiceOutput(sio, sid, self.bot_message_evt, data['message'])
             if data['message'] == "/get_started":
                 message = data['message']
             else:
@@ -208,15 +218,14 @@ class SocketIOVoiceInput(InputChannel):
                 if not os.path.isfile(path):
                     logger.info(f" file does not exist.")
 
-                fs, audio = wav.read(received_file)
-                #message = ds.stt(audio, fs)
+                # fs, audio = wav.read(received_file)
+                # message = ds.stt(audio, fs)
                 message = "Bon dia!"
 
-                await sio.emit(self.user_message_evt, {"text":message}, room=sid)
-
+                await sio.emit(self.user_message_evt, {"text": message}, room=sid)
 
             message_rasa = UserMessage(message, output_channel, sid,
-                                  input_channel=self.name())
+                                       input_channel=self.name())
             await on_new_message(message_rasa)
 
         return socketio_webhook
