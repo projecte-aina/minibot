@@ -41,6 +41,7 @@ class SocketIOVoiceOutput(OutputChannel):
         self.bot_message_evt = bot_message_evt
         self.tts_url = tts_url
         self.tts_voice = tts_voice
+        logger.info(f"output init: tts_url {self.tts_url}, tts_voice {self.tts_voice}")
 
     async def _send_audio_message(self, socket_id: Text, response: Any) -> None:
         """Sends a message to the recipient using the bot event."""
@@ -51,9 +52,11 @@ class SocketIOVoiceOutput(OutputChannel):
             }
             if self.tts_voice:
                 q['speaker_id'] = self.tts_voice
-                q['style_wav'] = None
+            else:
+                q['speaker_id'] = "pau"
 
             audioEndpoint = f"{self.tts_url}/api/tts/?{urlencode(q)}"
+            logger.info(audioEndpoint)
             audio = urlopen(audioEndpoint).read()
             logger.debug(f"_send_message- Calling Speech Endpoint: {audioEndpoint}")
 
@@ -205,7 +208,7 @@ class SocketIOVoiceInput(InputChannel):
         async def handle_message(sid, data):
             print(data)
 
-            output_channel = SocketIOVoiceOutput(sio, sid, self.bot_message_evt, data['message'])
+            output_channel = SocketIOVoiceOutput(sio, self.bot_message_evt, self.tts_url, self.tts_voice)
             if data['message'] == "/get_started":
                 message = data['message']
             else:
