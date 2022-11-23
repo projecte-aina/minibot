@@ -16,6 +16,7 @@ pipeline:
 
   - name: SpacyNLP
     model: "ca_core_news_lg"
+    #model: "ca_bsc_demo_trf"
     case_sensitive: False
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
