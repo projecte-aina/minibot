@@ -17,12 +17,18 @@ nlu:
 
 - intent: my_name
   examples: |
-    - em dic [Eulàlia](user_name)
-    - El meu nom és [Miquel](user_name)
-    - Em diuen [Joan](user_name)
-    - [Carme](user_name)
-    - [Marieta](user_name)
-    - [Francesc](user_name)
+    - em dic [Eulàlia](PERS)
+    - El meu nom és [Miquel](PERS)
+    - Em diuen [Joan](PERS)
+    - [Carme](PERS)
+    - [Marieta](PERS)
+    - [Francesc](PERS)
+    - em dic [ona](PERS)
+    - El meu nom és [ferran](PERS)
+    - Em diuen [Marta](PERS)
+    - [Roger](PERS)
+    - [Agnès](PERS)
+    - [mireia](PERS)
    
     
 - intent: goodbye
@@ -420,7 +426,7 @@ nlu:
     - googlemaps
     - Google Assistant
     
-- synonym: user_name
+- synonym: PERS
   examples: |
     - Sònia
     - Francesc

@@ -18,22 +18,23 @@ intents:
   - thank_you
   - my_name:
         use_entities:
-        - user_name
+        - PERS
   
   
 entities:
   - insult
   - product
-  - user_name
+  - PERS
   - pos
 
 slots:
-  user_name:
+  PERS:
     type: text
  #   influence_conversation: false
+ # initial_value: 100
     mappings:
     - type: from_entity
-      entity: user_name
+      entity: PERS
       intent: my_name
     
 responses:
@@ -43,10 +44,10 @@ responses:
   utter_encantat:
     #- condition:
       #- type: slot
-        #name: user_name
-        #value: user_name
-    - text: "Hola, {user_name}, molt de gust"
-    - text: "Hola, {user_name}, com estàs?"
+        #name: PERS
+        #value: PERS
+    - text: "Hola, {PERS}, molt de gust"
+    - text: "Hola, {PERS}, com estàs?"
     - text: "Hola, molt de gust"
   
   utter_ask_name:
