@@ -6,6 +6,7 @@ recipe: default.v1
 # https://rasa.com/docs/rasa/nlu/components/
 
 # 3 nov 2022: configuració seguint les indiciacions d'aquí: https://rasa.com/docs/rasa/chitchat-faqs/
+# 24 nov: retocada a partir d'aquí: https://learning.rasa.com/conversational-ai-with-rasa/pipeline/
 
 language: ca
 
@@ -36,16 +37,17 @@ pipeline:
     max_ngram: 4
   - name: DIETClassifier        # "DIET (Dual Intent and Entity Transformer) is a multi-task architecture for intent classification and entity recognition. [...] DIET does not provide pre-trained word embeddings or pre-trained language models but it is able to use these features if they are added to the pipeline."
     epochs: 100
-  #  entity_recognition: False   # provarem amb l'spacy
+  #  entity_recognition: False   # es pot desactivar
+  - name: "SpacyEntityExtractor"
+    # dimensions to extract
+    dimensions: ["PER", "LOC", "ORG", "MISC"]
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
   - name: FallbackClassifier
     threshold: 0.25
     ambiguity_threshold: 0.1
-  - name: "SpacyEntityExtractor"
-    # dimensions to extract
-    dimensions: ["PER", "LOC", "ORG", "MISC"]
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -53,7 +55,7 @@ policies:
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
-#   - name: MemoizationPolicy
+  - name: MemoizationPolicy
   - name: RulePolicy 
 #   - name: UnexpecTEDIntentPolicy
 #     max_history: 5

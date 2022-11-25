@@ -5,7 +5,9 @@ rules:
 - rule: greet
   steps:
   - intent: greet
+  - action: action_tell_catalan_time
   - action: utter_greet
+
 
 
 - rule: Say goodbye anytime the user says goodbye

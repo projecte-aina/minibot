@@ -18,23 +18,23 @@ intents:
   - thank_you
   - my_name:
         use_entities:
-        - PERS
+        - PER
   
   
 entities:
   - insult
   - product
-  - PERS
+  - PER
   - pos
 
 slots:
-  PERS:
+  PER:
     type: text
  #   influence_conversation: false
  # initial_value: 100
     mappings:
     - type: from_entity
-      entity: PERS
+      entity: PER
       intent: my_name
     
 responses:
@@ -44,10 +44,10 @@ responses:
   utter_encantat:
     #- condition:
       #- type: slot
-        #name: PERS
-        #value: PERS
-    - text: "Hola, {PERS}, molt de gust"
-    - text: "Hola, {PERS}, com estàs?"
+        #name: PER
+        #value: PER
+    - text: "Hola, {PER}, molt de gust"
+    - text: "Hola, {PER}, com estàs?"
     - text: "Hola, molt de gust"
   
   utter_ask_name:
@@ -57,9 +57,10 @@ responses:
   #- text: "Hola! Com estàs?"
   #- text: "Ei! Com va?"
   #- text: "Ep! Com anem?"
-  - text: "Hola, soc el bot del projecte Aina. Puc respondre algunes preguntes sobre el projecte."
-  - text: "Hola, soc el bot del projecte Aina. Vols fer-me alguna pregunta sobre el projecte?"
-  - text: "Hola, soc el bot del projecte Aina. Vols saber alguna cosa sobre el projecte?"
+  - text: "Soc el bot del projecte Aina. Puc respondre algunes preguntes sobre el projecte."
+  - text: "Soc el bot del projecte Aina. Vols fer-me alguna pregunta sobre el projecte?"
+  - text: "Soc el bot del projecte Aina. Vols saber alguna cosa sobre el projecte?"
+  - text: "Soc el bot del projecte Aina. Si tens alguna pregunta sobre el projecte, puc mirar de respondre't."
   
   utter_ask:
   - text: "Què vols saber en concret?"
@@ -190,6 +191,11 @@ responses:
   
   utter_faq/bloom:
   - text: "El Bloom és el primer model generatiu d'intel·ligència artificial lliure i multilingüe. Es tracta d'un model que ha estat possible gràcies a la col·laboració de centenars de grups d'investigació d'arreu del món, entre ells, també hi trobem la participació del Projecte Aina, que ha permès que el català sigui una de les 59 llengües que el conformen."
+  
+actions:
+- action_tell_time
+- action_tell_catalan_time
+- action_hello_world
   
 session_config:
   session_expiration_time: 60

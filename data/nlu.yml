@@ -17,18 +17,18 @@ nlu:
 
 - intent: my_name
   examples: |
-    - em dic [Eulàlia](PERS)
-    - El meu nom és [Miquel](PERS)
-    - Em diuen [Joan](PERS)
-    - [Carme](PERS)
-    - [Marieta](PERS)
-    - [Francesc](PERS)
-    - em dic [ona](PERS)
-    - El meu nom és [ferran](PERS)
-    - Em diuen [Marta](PERS)
-    - [Roger](PERS)
-    - [Agnès](PERS)
-    - [mireia](PERS)
+    - em dic [Eulàlia](PER)
+    - El meu nom és [Miquel](PER)
+    - Em diuen [Joan](PER)
+    - [Carme](PER)
+    - [Marieta](PER)
+    - [Francesc](PER)
+    - em dic [ona](PER)
+    - El meu nom és [ferran](PER)
+    - Em diuen [Marta](PER)
+    - [Roger](PER)
+    - [Agnès](PER)
+    - [mireia](PER)
    
     
 - intent: goodbye
@@ -426,7 +426,7 @@ nlu:
     - googlemaps
     - Google Assistant
     
-- synonym: PERS
+- synonym: PER
   examples: |
     - Sònia
     - Francesc

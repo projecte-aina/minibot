@@ -11,63 +11,10 @@
 from typing import Any, Text, Dict, List
 
 import arrow 
-from datetime import datetime, timezone
 import dateparser
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
-import lingua_franca
-from lingua_franca.format import nice_date, nice_date_time, nice_time
-from lingua_franca.time import default_timezone
-
-lingua_franca.load_language('ca')
-
-
-dies_db = {"Sun": "diumenge",
-    "Mon": "dilluns",
-    "Tue": "dimarts",
-    "Wed": "dimecres",
-    "Thu": "dijous",
-    "Fri": "divendres",
-    "Sat": "dissabte"}
-
-mesos_db = {1: "gener",
-    2: "febrer",
-    3: "març",
-    4: "abril",
-    5: "maig",
-    6: "juny",
-    7: "juliol",
-    8: "agost",
-    9: "setembre",
-    10: "octubre",
-    11: "novembre",
-    12: "desembre"}
-
-class ActionTellCatalanTime(Action):
-
-    def name(self) -> Text:
-        return "action_tell_catalan_time"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            
-        x = datetime.now()        
-        hora = nice_time(datetime.now(default_timezone()), variant="full_bell")  
-        dia = x.strftime("%a")    
-        if x.hour <= 13:
-            salut = "Bon dia"
-        elif x.hour < 21:
-            salut = "Bona tarda"
-        else:
-            salut = "Bona nit"
-        msg = f"{salut}, són {hora} del {dies_db[dia]} {x.day} de {mesos_db[x.month]}."
-        #msg = "hola rata"
-        dispatcher.utter_message(text=msg)
-        
-        return []
-
 
 city_db = {
     'brussels': 'Europe/Brussels', 
