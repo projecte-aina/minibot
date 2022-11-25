@@ -14,6 +14,22 @@ nlu:
     - bona nit
     - ei, tu!
     - epa
+
+- intent: my_name
+  examples: |
+    - em dic [Eulàlia](PERS)
+    - El meu nom és [Miquel](PERS)
+    - Em diuen [Joan](PERS)
+    - [Carme](PERS)
+    - [Marieta](PERS)
+    - [Francesc](PERS)
+    - em dic [ona](PERS)
+    - El meu nom és [ferran](PERS)
+    - Em diuen [Marta](PERS)
+    - [Roger](PERS)
+    - [Agnès](PERS)
+    - [mireia](PERS)
+   
     
 - intent: goodbye
   examples: |
@@ -45,6 +61,11 @@ nlu:
     - d'acord
     - ja hi pots pujar de peus
     - és clar
+    - val
+    - vale
+    - ok
+    - oc
+    - oquei
 
 - intent: deny
   examples: |
@@ -93,7 +114,9 @@ nlu:
     - què ets?
     - per a què serveixes?
     - què fas?
+    - En què em pots ajudar?
     - de què serveixes?
+    - qui t'ha fet?
     
 - intent: your_name
   examples: |
@@ -104,9 +127,11 @@ nlu:
     
 - intent: praise
   examples: |
-    - ets una monada
-    - ets molt mono
-    - que xulo!
+    - ets una [monada](pos)
+    - ets molt [mono](pos)
+    - funciones molt bé
+    - que [xulo](pos)!
+    - ets molt [guai](pos)
     - te'n surts molt bé
     - ho fas molt bé
     - caram, que guai
@@ -138,6 +163,12 @@ nlu:
     - quan volaran els cotxes?
     - qui serà el nou president?
     - demà plourà?
+    - com es diu la teva mare?
+    - els nens de la classe del meu fill no parlen català. Com ho solucionem, això?
+    - Vols que Catalunya sigui independent?
+    - els companys d'escola del meu fill no parlen català, què fareu al respecte?
+    - Creus que el català està en perill d’extinció?
+    - esteu intentant adoctrinar els nens amb la tecnologia?
 
 - intent: faq/aina
   examples: |
@@ -165,6 +196,7 @@ nlu:
     - com ho voleu aconseguir?
     - com ho aconseguireu?
     - què estan fent?
+    - com impulsarà el projecte Aina el català a l'era digital?
 
 - intent: faq/finan
   examples: |
@@ -176,6 +208,8 @@ nlu:
     - què costa?
     - quants diners val?
     - quin pressupost té?
+    - quin preu té?
+    - quant n'estem pagant?
     
 - intent: faq/gent
   examples: |
@@ -206,6 +240,16 @@ nlu:
     - on són els datasets?
     - on publiqueu els resultats?
     - on hi ha els models?
+    - on esteu publicant els resultats?
+    - Què ha assolit el projecte aina?
+    - on hi ha els models?
+    - tot el que es desenvolupi serà obert?
+    - què heu fet fins ara?
+    - com us heu gastat els diners?
+    - en què s’ha invertit fins ara?
+    - de què han servit aquests diners?
+    - què heu fet amb la pasta?
+
     
 - intent: faq/info
   examples: |
@@ -215,6 +259,25 @@ nlu:
     - això on s'explica?
     - on hi ha més info?
     - com puc saber què s’està desenvolupant en aquest projecte?
+    - info
+    - més info
+    
+- intent: faq/ia
+  examples: |
+    - Què és la intel·ligència artificial?
+    - Per a què serveix la intel·ligència artificial?
+    - I què és la intel·ligència artificial?
+    - Què és la IA?
+    - què vol dir AI?
+
+- intent: faq/pln
+  examples: |
+    - Què és el Processament del Llenguatge Natural?
+    - Què es el PLN?
+    - què vol dir PLN?
+    - què és això de processament del llenguatge?
+    - de què va el processament del llenguatge?
+    - què és el tractament automàtic del llenguatge?
     
 - intent: faq/product
   examples: |
@@ -222,6 +285,78 @@ nlu:
     - Quan tindrem [google maps](product) en català?
     - Per què [Amazon](product) no ofereix productes en català?
     
+- intent: faq/perque
+  examples: |
+    - Per què necessitem l’Aina?
+    - Per què és important impulsar la ia en català?
+    - per què han decidit crear l’Aina?
+    - per què es gasten els diners amb això?
+    - Perquè és necessari invertir en tecnologies del llenguatge en català?
+    - per què em serveix l’aina?
+    - què m’arregla a mi el projecte aina?
+    - a mi com m’ajudarà aquest projecte?
+    
+- intent: faq/perque_ia
+  examples: |
+    - Per què cal invertir en intel·ligència artificial?
+    - és necessari desenvolupar intel·ligència artificial?
+    - per què gasteu tant en intel·ligència artificial?
+    - cal invertir tant en la ia?
+  
+- intent: faq/qui_aina
+  examples: |
+    - Qui és l’Aina?
+    - Qui era Aina?
+    - Per què es diu Aina el projecte?
+    - Qui és l’Aina Moll?
+    - Per què et dius Aina?
+    - D'on ha sortit el nom d'Aina?
+
+  
+- intent: faq/despres
+  examples: |
+    - Què passarà quan acabi el projecte?
+    - Qui podrà actualitzar el que es desenvolupi a aina?
+    - i després, què?
+    - què passarà amb aquestes dades quan s'acabi el projecte?
+
+- intent: faq/vocabulari
+  examples: |
+    - Què vol dir corpus?
+    - Què és un corpus?
+    - Què vol dir dataset?
+    - Què és un dataset?
+    - Què vol dir model?
+    - Què és un model?
+    - per què parleu de datasets?
+    - què són els corpus aquests?
+    - això de corpus va de religió?
+
+  
+- intent: faq/perill
+  examples: |
+    - Quins són els perills de la IA?
+    - La IA té riscos?
+    - Quins són els perills de la intel·ligència artificial?
+    - La intel·ligència artificial pot ser perillosa?
+    - Perdrem feines per culpa de la intel·ligència artificial?
+    - La intel·ligència artificial pot ser negativa per la nostra societat?
+    - Hem de tenir por dels efectes de la intel·ligència artificial?
+    - Hem de patir pel que pot arribar a aconseguir la intel·ligència artificial?
+    - Les màquines ens prendran la feina?
+  
+- intent: faq/biaixos
+  examples: |
+    - Els algoritmes tenen biaixos?
+    - Perquè insulten els models de llenguatge?
+    - Són ètics els models de llenguatge?
+    - Quina ètica té la intel·ligència artificial?
+    - Quins són els biaixos de Aina?
+    - Com s’avaluen els biaixos dels models de llenguatge?
+    - la intel·ligència aritficial és racista?
+    - què feu perquè els vostres models no siguin racistes?
+    - que feu per evitar que els vostres models siguin fatxes?
+  
 - intent: faq/ajudar
   examples: |
     - Què puc fer perquè l'[Alexa](product) parli català?
@@ -237,6 +372,30 @@ nlu:
     - Què és això del common voice?
     - què he de fer per participar a aquest corpus?
     - vull participar a la campanya La nostra llengua és la teva veu
+    
+- intent: faq/altres_llengues
+  examples: |
+    - Esteu fent algo amb l’aranès?
+    - Esteu fent alguna cosa amb altres llengües del país?
+    - Aina és només en català?
+    - L'aina és també pel valencià?
+    - Només treballeu amb el català de Catalunya?
+    - Quan fareu alguna cosa per l'occità?
+    - També treballeu amb el castellà?
+    
+- intent: faq/bloom
+  examples: |
+    - Què és BLOOM?
+    - Què és aquest model que es diu bloom?
+    - Què és el model de la floreta rosa?
+    - El bloom és un model més tòxic que els altres?
+    - heu participat en el bloom?
+    - l’aina ha participat en el projecte bloom?
+    - com ho heu fet perquè el català estigui en el Bloom?
+
+
+
+
 
 ### entitats
 
@@ -253,11 +412,33 @@ nlu:
     - petarda
     - mongola
     - merda
+    - fatxa
 
 - synonym: product
   examples: |
     - Amazon
     - Alexia
+    - Alexa
+    - Mycroft
+    - Microsoft
+    - Apple
     - Google
     - googlemaps
     - Google Assistant
+    
+- synonym: PERS
+  examples: |
+    - Sònia
+    - Francesc
+    - Ioli
+    - Marc
+    - Agnès
+    - Roger
+    
+- synonym: pos
+  examples: |
+    - guai
+    - mono
+    - interessant
+    - bonic
+    - xulo

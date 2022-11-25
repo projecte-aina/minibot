@@ -16,24 +16,36 @@ pipeline:
 
   - name: SpacyNLP
     model: "ca_core_news_lg"
+    #model: "ca_bsc_demo_trf"
     case_sensitive: False
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
+    "pooling": "mean" # pot ser mean o pot ser max
   - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
+  #- name: LexicalSyntacticFeaturizer
+    #"features": [
+        #[],
+        #["pos", "BOS", "EOS", "low", "upper", "title", "digit"],
+        #[],
+    #]
+    # que tingui en compte el pos per a trobar les entities
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
-  - name: DIETClassifier
+  - name: DIETClassifier        # "DIET (Dual Intent and Entity Transformer) is a multi-task architecture for intent classification and entity recognition. [...] DIET does not provide pre-trained word embeddings or pre-trained language models but it is able to use these features if they are added to the pipeline."
     epochs: 100
+  #  entity_recognition: False   # provarem amb l'spacy
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
   - name: FallbackClassifier
     threshold: 0.25
     ambiguity_threshold: 0.1
+  - name: "SpacyEntityExtractor"
+    # dimensions to extract
+    dimensions: ["PER", "LOC", "ORG", "MISC"]
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

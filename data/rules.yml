@@ -2,6 +2,12 @@ version: "3.1"
 
 rules:
 
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -36,7 +42,12 @@ rules:
   steps:
   - intent: your_name
   - action: utter_name
-  
+ 
+- rule: digues encantat quan et diuen el nom
+  steps:
+  - intent: my_name
+  - action: utter_encantat
+
 - rule: respon les faqs
   steps:
   - intent: faq
@@ -52,4 +63,12 @@ rules:
   - intent: nlu_fallback
   - action: utter_fallback
 
-
+- rule: happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+  
+- rule: unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
