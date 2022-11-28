@@ -1,0 +1,2 @@
+lingua-franca @ git+https://github.com/projecte-aina/lingua-franca.git
+arrow==1.2.3

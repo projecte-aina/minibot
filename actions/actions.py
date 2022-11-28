@@ -12,7 +12,6 @@ from typing import Any, Text, Dict, List
 
 import arrow 
 from datetime import datetime, timezone
-import dateparser
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher

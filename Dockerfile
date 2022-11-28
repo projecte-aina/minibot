@@ -1,6 +1,5 @@
 # Extend the official Rasa SDK image (change the version to whatever you need)
-FROM rasa/rasa:3.2.10-full
-
+FROM rasa/rasa:3.3.1-full
 # Switch to root user
 USER root
 

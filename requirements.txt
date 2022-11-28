@@ -170,4 +170,3 @@ Werkzeug==2.2.2
 wrapt==1.14.1
 yarl==1.8.1
 zipp==3.10.0
-git+https://github.com/projecte-aina/lingua-franca.git

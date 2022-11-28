@@ -13,7 +13,7 @@ stories:
     intent: mood_great
   - action: utter_happy
 
-- story: happy path 2
+- story: happy path requirements-actions.txt
   steps:
   - user: |
       hello there!
@@ -44,7 +44,7 @@ stories:
     intent: affirm
   - action: utter_happy
 
-- story: sad path 2
+- story: sad path requirements-actions.txt
   steps:
   - user: |
       hello
