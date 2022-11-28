@@ -12,6 +12,8 @@ from typing import Any, Text, Dict, List
 
 import arrow 
 from datetime import datetime, timezone
+
+import pytz
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
@@ -53,7 +55,7 @@ class ActionTellCatalanTime(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         x = datetime.now()        
-        hora = nice_time(datetime.now(default_timezone()), variant="full_bell")  
+        hora = nice_time(datetime.now(pytz.timezone('Europe/Madrid')), variant="full_bell")
         dia = x.strftime("%a")    
         if x.hour <= 13:
             salut = "Bon dia"
