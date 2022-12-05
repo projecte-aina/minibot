@@ -5,7 +5,7 @@ rules:
 - rule: greet
   steps:
   - intent: greet
-  - action: action_tell_catalan_time
+  - action: action_welcome
   - action: utter_greet
 
 
@@ -36,10 +36,12 @@ rules:
   - action: utter_insult
   
 - rule: digues l'hora
+  steps:
   - intent: hora
   - action: action_tell_catalan_time
   
 - rule: disculpa't quan s'enfaden
+  steps:
   - intent: frustracio
   - action: utter_frustracio
 #- rule: respon com estàs
@@ -52,10 +54,10 @@ rules:
   #- intent: your_name
   #- action: utter_name
  
-#- rule: digues encantat quan et diuen el nom
-  #steps:
-  #- intent: my_name
-  #- action: utter_encantat
+- rule: digues encantat quan et diuen el nom
+  steps:
+  - intent: my_name
+  - action: utter_my_name
 
 - rule: respon les faqs
   steps:
@@ -76,6 +78,11 @@ rules:
   steps:
   - intent: chitchat
   - action: utter_chitchat
+  
+- rule: tot
+  steps:
+  - intent: tot
+  - action: utter_tot
 
 #- rule: happy mood
   #steps:

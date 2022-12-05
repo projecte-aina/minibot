@@ -5,7 +5,7 @@ stories:
 - story: salutacio - pregunta - adeu
   steps:
   - intent: greet
-  - action: action_tell_catalan_time
+  - action: action_welcome
   - action: utter_greet
   - intent: faq
   - action: utter_faq
@@ -15,7 +15,7 @@ stories:
 - story: salutacio - pregunta - pregunta - adeu
   steps:
   - intent: greet
-  - action: action_tell_catalan_time
+  - action: action_welcome
   - action: utter_greet
   - intent: faq
   - action: utter_faq
@@ -27,7 +27,7 @@ stories:
 - story: salutacio - confirm - pregunta - adeu
   steps:
   - intent: greet
-  - action: action_tell_catalan_time
+  - action: action_welcome
   - action: utter_greet
   - intent: affirm
   - action: utter_ask
@@ -36,6 +36,19 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: salutacio - tot - pregunta - pregunta - adeu
+  steps:
+  - intent: greet
+  - action: action_welcome
+  - action: utter_greet
+  - intent: tot
+  - action: utter_tot
+  - intent: faq
+  - action: utter_faq
+  - intent: faq
+  - action: utter_faq
+  - intent: goodbye
+  - action: utter_goodbye
 
 #- story: com estàs - bé - guai
   #steps:

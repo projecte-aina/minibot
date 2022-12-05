@@ -14,9 +14,13 @@ nlu:
     - bona nit
     - ei, tu!
     - epa
-    - Uep! Com anam?
-    - Ei, com va?
-    - hola?
+    - Uep! Com anam
+    - Ei, com va
+    - hola
+    - hola
+    - Hola bona nit! Fa fresqueta eh?
+    - Hola
+    - Hola?
     
 - intent: goodbye
   examples: |
@@ -35,6 +39,8 @@ nlu:
     - a la pròxima
     - ens veiem
     - ja parlem
+    - ad´eu
+    - al cop que ve
 
 - intent: affirm
   examples: |
@@ -53,6 +59,8 @@ nlu:
     - ok
     - oc
     - oquei
+    - afirmatiu
+    - clar
 
 - intent: deny
   examples: |
@@ -63,6 +71,7 @@ nlu:
     - crec que no
     - passo
     - ni parlar-ne
+    - no t'amoïnis
     
 - intent: thank_you
   examples: |
@@ -75,38 +84,32 @@ nlu:
     
 - intent: hora
   examples: |
-    - quina hora és?
-    - tens hora?
-    - quantes en tenim?
-    - quants en tenim avui?
-    - em pots dir l'hora?
-    - que tens hora?
-    - quina hora tens?
-    - quines hores són?
+    - quina hora és
+    - tens hora
+    - quantes en tenim
+    - quants en tenim avui
+    - em pots dir l'hora
+    - que tens hora
+    - quina hora tens
+    - quines hores són
+    - quina hora és
+    - Quina hora es
+    - quantes en tens
+    - quantes n'han tocat
     
 - intent: bot_challenge
   examples: |
-    - ets un bot?
-    - ets una persona?
-    - estic parlant amb un bot?
-    - estic parlant amb una persona?
-    - ets humà?
-    - qui ets?
-    - què ets?
-    - qui t'ha fet?
+    - ets un bot
+    - ets una persona
+    - estic parlant amb un bot
+    - estic parlant amb una persona
+    - ets humà
+    - qui ets
+    - què ets
+    - qui t'ha fet
+    - Ets humà
+    - Tens memòria
     
-    
-- intent: faq/your_use
-  examples: |
-    - per a què serveixes?
-    - què fas?
-    - En què em pots ajudar?
-    - de què serveixes?
-    - què saps fer?
-    - què et puc preguntar?
-    - quina mena d'informacions dones?
-    - quines coses et puc preguntar?
- 
 - intent: insult
   examples: |
     - ets un [inútil](insult)
@@ -119,19 +122,28 @@ nlu:
     - ai, per favor, que [idiota](insult) que arribes a ser!
     - mira que arribes a ser [imbècil](insult)
     - més [tonto](insult) i no neixes
+    - Ets [tonto](insult)
+    - Ets un bot [tonto](insult)
     
 - intent: out_of_scope
   examples: |
-    - quan serà independent Catalunya?
-    - quan volaran els cotxes?
-    - qui serà el nou president?
-    - demà plourà?
-    - com es diu la teva mare?
-    - els nens de la classe del meu fill no parlen català. Com ho solucionem, això?
-    - Vols que Catalunya sigui independent?
-    - els companys d'escola del meu fill no parlen català, què fareu al respecte?
-    - Creus que el català està en perill d’extinció?
-    - esteu intentant adoctrinar els nens amb la tecnologia?
+    - quan serà independent [Catalunya](LOC)
+    - quan volaran els cotxes
+    - qui serà el nou president
+    - demà plourà
+    - com es diu la teva mare
+    - els nens de la classe del meu fill no parlen català. Com ho solucionem, això
+    - Vols que Catalunya sigui independent
+    - els companys d'escola del meu fill no parlen català, què fareu al respecte
+    - Creus que el català està en perill d’extinció
+    - esteu intentant adoctrinar els nens amb la tecnologia
+    - què li ha passat al [Mitjavila](PER)
+    - qui és el president del govern espanyol
+    - com acabarà la guerra d'[Ucraïna](LOC)
+    - quins ingredients té la Coca-Cola
+    - [catalunya](LOC) independent
+    - som un poble
+    - Què fas aquesta nit
     
 - intent: frustracio
   examples: |
@@ -139,6 +151,12 @@ nlu:
     - no m'entens
     - això ja ho has dit
     - no funciones bé
+    
+- intent: tot
+  examples: |
+    - vull saber-ho tot
+    - explica-m'ho tot
+    - digues-m'ho tot
     
 - intent: chitchat/mood_great
   examples: |
@@ -157,7 +175,7 @@ nlu:
     - em vull morir
     - psè
     
-- intent: chitchat/my_name
+- intent: my_name
   examples: |
     - em dic [Eulàlia](PER)
     - El meu nom és [Miquel](PER)
@@ -174,15 +192,17 @@ nlu:
     
 - intent: chitchat/your_name
   examples: |
-    - com et dius?
+    - com et dius
     - quin nom tens
-    - tens nom?
-    - com et diuen?
-    - t'han posat nom?
-    - quin és el teu nom?
-    - com et criden?
-    - com te criden?
-    - que has nom?
+    - tens nom
+    - com et diuen
+    - t'han posat nom
+    - quin és el teu nom
+    - com et criden
+    - com te criden
+    - que has nom
+    - Tu com et dius
+    - com te dius
     
 - intent: chitchat/mes_preguntes
   examples: |
@@ -202,297 +222,476 @@ nlu:
     - te'n surts molt bé
     - ho fas molt bé
     - caram, que guai
+    - ets molt [bufó](pos)
     
 - intent: chitchat/how_are_you
   examples: |
-    - estic bé, i tu?
-    - com estàs?
-    - i tu, com estàs?
-    - què se sent, de ser un bot?
-    - i tu?
-    - com va?
-    - com anem?
+    - estic bé, i tu
+    - com estàs
+    - i tu, com estàs
+    - què se sent, de ser un bot
+    - i tu
+    - com va
+    - com anem
     
 - intent: faq/aina
   examples: |
-    - què és el projecte Aina?
-    - Què és això de l'Aina?
-    - de què va l'aina?
-    - què és aina?
-    - qui és Aina?
-    - què me'n pots explicar del projecte aina?
+    - què és el projecte Aina
+    - Què és això de l'Aina
+    - de què va l'aina
+    - què és aina
+    - qui és Aina
+    - què me'n pots explicar del projecte aina
     
 - intent: faq/objectius
   examples: |
-    - quins objectius té el projecte?
-    - per què es fa l'Aina?
-    - què busca el projecte Aina?
-    - quin és l'objectiu?
-    - què feu?
+    - quins objectius té el projecte
+    - per què es fa l'Aina
+    - què busca el projecte Aina
+    - quin és l'objectiu
+    - què feu
+    - quin és l’objectiu d’aquest projecte
+    - quines coses es faran al projecte
+    - aquest projecte, quins objectius té
+    - què fareu
+    - què teniu previst fer
+    - què heu planejat fer
     
 - intent: faq/com
   examples: |
-    - com ho fareu això?
-    - quina és l'estratègia?
-    - això com es fa?
-    - quin és el pla de treball?
-    - què esteu fent?
-    - com ho voleu aconseguir?
-    - com ho aconseguireu?
-    - què estan fent?
-    - com impulsarà el projecte Aina el català a l'era digital?
+    - com ho fareu això
+    - quina és l'estratègia
+    - això com es fa
+    - quin és el pla de treball
+    - què esteu fent
+    - com ho voleu aconseguir
+    - com ho aconseguireu
+    - què estan fent
+    - com impulsarà el projecte Aina el català a l'era digital
+    - què s’està generant en el projecte
+    - què s’està creant en el projecte
+    - I com jo fareu
+    - Com penseu aconseguir el vostre objectiu?
+    - Com voleu impular la intel·ligència artificial
+    - I com ho fareu?
+    - Com ho faig?
+    - què es vol crear en català?
+    - Què feu exactament dins del projecte?
 
 - intent: faq/finan
   examples: |
-    - quant val el projecte Aina?
-    - quin finançament té previst?
-    - quan val?
-    - què costa?
-    - quants diners val?
-    - quin pressupost té?
-    - quin preu té?
-    - quant n'estem pagant?
-    - Qui paga aquest projecte?
-    - Però qui ho paga?
-    - els diners d'on surten?
-    - qui paga el projecte Aina?
-    - això qui ho paga?
+    - quant val el projecte Aina
+    - quin finançament té previst
+    - quan val
+    - què costa
+    - quants diners val
+    - quin pressupost té
+    - quin preu té
+    - quant n'estem pagant
+    - Quant val?
+    - quant ens costa
     
+- intent: faq/qui_finan
+  examples: |
+    - Qui paga aquest projecte
+    - Però qui ho paga
+    - els diners d'on surten
+    - qui paga el projecte Aina
+    - això qui ho paga
+    - qui financia aquest projecte
+    - tot això, qui ho paga
+    - quin departament financia el projecte
+    - d’on surten els diners per a Aina
+    - aquest projecte el paga la Generalitat o l’estat espanyol
+    - això ho paga la unió europea
+    - venen dels fons next generation
+    - això són diners dels fons europeus
+    - és un next generation
+    - ho paga el gobierno de españa
+    - els paga la generalitat
+    - Qui ho paga
     
 - intent: faq/gent
   examples: |
-    - qui treballa en el projecte Aina?
-    - qui desenvolupa el projecte?
-    - qui ho fa?
-    - qui és el responsable de desenvolupar el projecte?
-    - qui lidera el projecte?
-    - i qui ho fa tot això?
-    - qui se'n carrega del desenvolupament del projecte?
-    - on es porta a termini aquest projecte?
-    - a on es porta a terme aquest projecte?
-    - qui porta a terme el projecte?
-    - qui s'ocupa d'aquest projecte?
-
+    - qui treballa en el projecte Aina
+    - qui desenvolupa el projecte
+    - qui ho fa
+    - qui és el responsable de desenvolupar el projecte
+    - qui lidera el projecte
+    - i qui ho fa tot això
+    - qui se'n carrega del desenvolupament del projecte
+    - on es porta a termini aquest projecte
+    - a on es porta a terme aquest projecte
+    - qui porta a terme el projecte
+    - qui s'ocupa d'aquest projecte
     
 - intent: faq/temps
   examples: |
-    - quant de temps ha de durar el projecte Aina?
-    - quan s'acaba?
-    - quan va començar el projecte?
-    - s'acabarà algun dia?
-    - quant dura?
-    - quant de temps està previst que duri el projecte?
+    - quant de temps ha de durar el projecte Aina
+    - quan s'acaba
+    - quan va començar el projecte
+    - s'acabarà algun dia
+    - quant dura
+    - quant de temps està previst que duri el projecte
+    - uan s’acabarà el projecte
     
 - intent: faq/resultats
   examples: |
-    - quins resultats heu obtingut?
-    - on són els resultats?
-    - què heu fet fins ara?
-    - on ho puc veure?
-    - on puc trobar els models?
-    - això on ho trobo?
-    - on són els datasets?
-    - on publiqueu els resultats?
-    - on hi ha els models?
-    - on esteu publicant els resultats?
-    - Què ha assolit el projecte aina?
-    - on hi ha els models?
-    - tot el que es desenvolupi serà obert?
-    - què heu fet fins ara?
-    - com us heu gastat els diners?
-    - en què s’ha invertit fins ara?
-    - de què han servit aquests diners?
-    - què heu fet amb la pasta?
-    - Quan hi haurà els primers resultats? 
-    - Quan tindreu els primers assistents personals? 
-    - Quan veurem els primers resultars? 
-    - quan podrem fer servir els resultats?
+    - quins resultats heu obtingut
+    - on són els resultats
+    - què heu fet fins ara
+    - on ho puc veure
+    - on puc trobar els models
+    - això on ho trobo
+    - on són els datasets
+    - on publiqueu els resultats
+    - on hi ha els models
+    - on esteu publicant els resultats
+    - Què ha assolit el projecte aina
+    - on hi ha els models
+    - tot el que es desenvolupi serà obert
+    - què heu fet fins ara
+    - com us heu gastat els diners
+    - en què s’ha invertit fins ara
+    - de què han servit aquests diners
+    - què heu fet amb la pasta
+    - Quan hi haurà els primers resultats 
+    - Quan tindreu els primers assistents personals 
+    - Quan veurem els primers resultars 
+    - quan podrem fer servir els resultats
+    - On són els resultats
+    - on puc trobar els resultats d'aina?
 
-
+- intent: faq/your_use
+  examples: |
+    - per a què serveixes
+    - què fas
+    - En què em pots ajudar
+    - de què serveixes
+    - què saps fer
+    - què et puc preguntar
+    - quina mena d'informacions dones
+    - quines coses et puc preguntar
+    - Quines preguntes respons
+    - quines coses saps
     
 - intent: faq/info
   examples: |
-    - on puc trobar més informació?
-    - com puc estar al dia de les novetats?
-    - com puc saber les notícies?
-    - això on s'explica?
-    - on hi ha més info?
-    - com puc saber què s’està desenvolupant en aquest projecte?
+    - on puc trobar més informació
+    - com puc estar al dia de les novetats
+    - com puc saber les notícies
+    - això on s'explica
+    - on hi ha més info
+    - com puc saber què s’està desenvolupant en aquest projecte
     - info
     - més info
-    - informació?
-    
+    - informació
+    - tens més demos
+    - on són les demos
+    - demos
+    - demostracions
+    - tens més demostracions
+    - on puc trobar les altres demos
+    - on són les altres demostracions
     
 - intent: faq/ia
   examples: |
-    - Què és la intel·ligència artificial?
-    - Per a què serveix la intel·ligència artificial?
-    - I què és la intel·ligència artificial?
-    - Què és la IA?
-    - què vol dir AI?
+    - Què és la intel·ligència artificial
+    - Per a què serveix la intel·ligència artificial
+    - I què és la intel·ligència artificial
+    - Què és la IA
+    - què vol dir AI
 
 - intent: faq/pln
   examples: |
-    - Què és el Processament del Llenguatge Natural?
-    - Què es el PLN?
-    - què vol dir PLN?
-    - què és això de processament del llenguatge?
-    - de què va el processament del llenguatge?
-    - què és el tractament automàtic del llenguatge?
+    - Què és el Processament del Llenguatge Natural
+    - Què es el PLN
+    - què vol dir PLN
+    - què és això de processament del llenguatge
+    - de què va el processament del llenguatge
+    - què és el tractament automàtic del llenguatge
+    - què pot fer el processament del llenguatge
     
 - intent: faq/product
   examples: |
-    - L'[Alexa](product) parlarà català?
-    - Quan tindrem [google maps](product) en català?
-    - Per què [Amazon](product) no ofereix productes en català?
+    - L'[Alexa](product) parlarà català
+    - Quan tindrem [google maps](product) en català
+    - Per què [Amazon](product) no ofereix productes en català
     
 - intent: faq/perque
   examples: |
-    - Per què necessitem l’Aina?
-    - Per què és important impulsar la ia en català?
-    - per què han decidit crear l’Aina?
-    - per què es gasten els diners amb això?
-    - Perquè és necessari invertir en tecnologies del llenguatge en català?
-    - per què em serveix l’aina?
-    - què m’arregla a mi el projecte aina?
-    - a mi com m’ajudarà aquest projecte?
+    - Per què necessitem l’Aina
+    - Per què és important impulsar la ia en català
+    - per què han decidit crear l’Aina
+    - per què es gasten els diners amb això
+    - Perquè és necessari invertir en tecnologies del llenguatge en català
+    - per què em serveix l’aina
+    - què m’arregla a mi el projecte aina
+    - a mi com m’ajudarà aquest projecte
+    - I per què tants diner    
     
 - intent: faq/perque_ia
   examples: |
-    - Per què cal invertir en intel·ligència artificial?
-    - és necessari desenvolupar intel·ligència artificial?
-    - per què gasteu tant en intel·ligència artificial?
-    - cal invertir tant en la ia?
-  
-- intent: faq/qui_aina
+    - Per què cal invertir en intel·ligència artificial
+    - és necessari desenvolupar intel·ligència artificial
+    - per què gasteu tant en intel·ligència artificial
+    - cal invertir tant en la ia
+    - Quin sentit té fer intel·ligència artificial en català
+    
+- intent: faq/perque_aina
   examples: |
-    - Qui és l’Aina?
-    - Qui era Aina?
-    - Per què es diu Aina el projecte?
-    - Qui és l’Aina Moll?
-    - Per què et dius Aina?
-    - D'on ha sortit el nom d'Aina?
+    - per què és diu AINA aquest projecte
+    - per què rep aquest nom
+    - per què es diu així el projecte
+    - per què li heu posat així
 
-  
+- intent: faq/aina_moll
+  examples: |
+    - Qui és l’Aina
+    - Qui era Aina
+    - Per què es diu Aina el projecte
+    - Qui és l’Aina Moll
+    - Per què et dius Aina
+    - D'on ha sortit el nom d'Aina
+    - Qui és l’Aina Moll
+    - Qui va ser l’Aina Moll  
+ 
+- intent: faq/ovelles_electriques
+  examples: |
+    - Els robots poden tindre sentiments
+    - els ordinadors tenen sentiments
+    - la intel·ligència artificial pot crear màquines amb sentiments
+    - els algoritmes pensen
+    - els ordinadors poden pensar
+    - els robots somien ovelles elèctriques
+    - els robots somien truites electròniques
+    - els ordinadors s’enamoren
+    - tens sentiments
+    - els robots poden somniar?
+    - els models de llenguatge realment entenen el llenguatge?
+    - Les màquines ens prendran la feina
+
+- intent: faq/collaboradors
+  examples: |
+    - Amb qui col·labora BSC pel projecte AINA
+    - Qui col·labora amb BSC
+    - Quines entitats aporten a AINA
+    - Quines organitzacions col·laboren amb BSC
+    - Quines empreses col·laboren per AINA
+    - Qui aporta a AINA
+    - Quines entitats aporten a AINA
+    - col·laboreu amb alguna empresa
+    - esteu treballant amb alguna empresa
+    - la generalitat us ha aportat dades
+    - qui us dona les dades
+    
+- intent: faq/stt
+  examples: |
+    - Puc transcriure la meva veu
+    - puc transcriure enregistraments
+    - com puc transcriure la meva veu
+    - teniu algun sistema de veu a text automàtic
+    - què puc fer per transcriure la meva veu
+    - necessito transcriure els meus àudios
+    - teniu algun sistema per transcriure la veu
+
+ 
 - intent: faq/despres
   examples: |
-    - Què passarà quan acabi el projecte?
-    - Qui podrà actualitzar el que es desenvolupi a aina?
-    - i després, què?
-    - què passarà amb aquestes dades quan s'acabi el projecte?
+    - Què passarà quan acabi el projecte
+    - Qui podrà actualitzar el que es desenvolupi a aina
+    - i després, què
+    - què passarà amb aquestes dades quan s'acabi el projecte
 
 - intent: faq/corpus
   examples: |
-    - Què vol dir corpus?
-    - Què és un corpus?
-    - Què vol dir dataset?
-    - Què és un dataset?
-    - Què vol dir model?
-    - Què és un model?
-    - per què parleu de datasets?
-    - què són els corpus aquests?
-    - això de corpus va de religió?
+    - Què vol dir corpus
+    - Què és un corpus
+    - Què vol dir dataset
+    - Què és un dataset
+    - Què vol dir model
+    - Què és un model
+    - per què parleu de datasets
+    - què són els corpus aquests
+    - això de corpus va de religió
+    - Això dels corpus què és
 
-  
 - intent: faq/perill
   examples: |
-    - Quins són els perills de la IA?
-    - La IA té riscos?
-    - Quins són els perills de la intel·ligència artificial?
-    - La intel·ligència artificial pot ser perillosa?
-    - Perdrem feines per culpa de la intel·ligència artificial?
-    - La intel·ligència artificial pot ser negativa per la nostra societat?
-    - Hem de tenir por dels efectes de la intel·ligència artificial?
-    - Hem de patir pel que pot arribar a aconseguir la intel·ligència artificial?
-    - Les màquines ens prendran la feina?
+    - Quins són els perills de la IA
+    - La IA té riscos
+    - Quins són els perills de la intel·ligència artificial
+    - La intel·ligència artificial pot ser perillosa
+    - Perdrem feines per culpa de la intel·ligència artificial
+    - La intel·ligència artificial pot ser negativa per la nostra societat
+    - Hem de tenir por dels efectes de la intel·ligència artificial
+    - Hem de patir pel que pot arribar a aconseguir la intel·ligència artificial
+    - quins riscos pot tenir?
+    - la intel·ligència artificial pot ser perillosa?
   
 - intent: faq/biaixos
   examples: |
-    - Els algoritmes tenen biaixos?
-    - Perquè insulten els models de llenguatge?
-    - Són ètics els models de llenguatge?
-    - Quina ètica té la intel·ligència artificial?
-    - Quins són els biaixos de Aina?
-    - Com s’avaluen els biaixos dels models de llenguatge?
-    - la intel·ligència aritficial és racista?
-    - què feu perquè els vostres models no siguin racistes?
-    - que feu per evitar que els vostres models siguin fatxes?
+    - Els algoritmes tenen biaixos
+    - Perquè insulten els models de llenguatge
+    - Són ètics els models de llenguatge
+    - Quina ètica té la intel·ligència artificial
+    - Quins són els biaixos de Aina
+    - Com s’avaluen els biaixos dels models de llenguatge
+    - la intel·ligència aritficial és racista
+    - què feu perquè els vostres models no siguin racistes
+    - que feu per evitar que els vostres models siguin fatxes
   
 - intent: faq/ajudar
   examples: |
-    - Què puc fer perquè l'[Alexa](product) parli català?
-    - Com puc ajudar al projecte Aina?
-    - Podem fer alguna cosa per ajudar el projecte?
-    - Puc col·laborar?
-    - Què hem de fer per col·laborar amb vosaltres?
-    - Com podem ajudar?
+    - Què puc fer perquè l'[Alexa](product) parli català
+    - Com puc ajudar al projecte Aina
+    - Podem fer alguna cosa per ajudar el projecte
+    - Puc col·laborar
+    - Què hem de fer per col·laborar amb vosaltres
+    - Com podem ajudar
+    - Com puc ajudar
+    - m'agradaria ajudar
+    - vull col·laborar amb vosaltres
     
 - intent: faq/commonvoice
   examples: |
-    - Què és el corpus commonvoice?
-    - Què és això del common voice?
-    - què he de fer per participar a aquest corpus?
+    - Què és el corpus commonvoice
+    - Què és això del common voice
+    - què he de fer per participar a aquest corpus
     - vull participar a la campanya La nostra llengua és la teva veu
     
 - intent: faq/altres_llengues
   examples: |
-    - Esteu fent algo amb l’aranès?
-    - Esteu fent alguna cosa amb altres llengües del país?
-    - Aina és només en català?
-    - L'aina és també pel valencià?
-    - Només treballeu amb el català de Catalunya?
-    - Quan fareu alguna cosa per l'occità?
-    - També treballeu amb el castellà?
-    - Quina llengua cobreix el projecte?
-    - aquest projecte inclou també el balear?
-    - inclou al valencià?
-    - què feu amb el valencià?
-    - també feu alguerès?
+    - Esteu fent algo amb l’[aranès](lang)
+    - Esteu fent alguna cosa amb altres llengües del país
+    - Aina és només en [català](lang)
+    - L'aina és també pel [valencià](lang)
+    - Només treballeu amb el [català](lang) de Catalunya
+    - Quan fareu alguna cosa per l'[occità](lang)
+    - També treballeu amb el [castellà](lang)
+    - Quina llengua cobreix el projecte
+    - aquest projecte inclou també el [balear](lang)
+    - inclou al [valencià](lang)
+    - què feu amb el [valencià](lang)
+    - també feu [alguerès](lang)
+    - i l'[occità](lang)
+    - També treballeu amb [mallorquí](lang)
     
 - intent: faq/bloom
   examples: |
-    - Què és BLOOM?
-    - Què és aquest model que es diu bloom?
-    - Què és el model de la floreta rosa?
-    - El bloom és un model més tòxic que els altres?
-    - heu participat en el bloom?
-    - l’aina ha participat en el projecte bloom?
-    - com ho heu fet perquè el català estigui en el Bloom?
+    - Què és BLOOM
+    - Què és aquest model que es diu bloom
+    - Què és el model de la floreta rosa
+    - El bloom és un model més tòxic que els altres
+    - heu participat en el bloom
+    - l’aina ha participat en el projecte bloom
+    - com ho heu fet perquè el català estigui en el Bloom
+    
+- intent: faq/catala
+  examples: |
+    - Qui parla el català 
+    - Quanta gent parla català
+    - Quanta gent parla el català
+    - quantes persones parlen català
+    - quants parlants té el català
+    - hi ha gaire gent que parli català
+    - quanta gent parla aquest idioma
+    - ningú parla català
+    - qui són els catalanoparlants
+    - quants catalanoparlants hi ha al món
+    - hi ha gaires catalanoparlants
+    - quants catalanoparlants queden
 
 - intent: faq/bsc
   examples: |
-    - què és el [bsc](bsc)?    
+    - què és el [bsc](bsc)    
     - que hi pinta el [barcelona supercomputing center](bsc)
-    - per qué es fa al [bsc-cns]](bsc)?
-    - per què es fa al [centro nacional de supercomputación](bsc)?
-    - què és el [barcelona supercomputing center](bsc)?
-    - per què el [centre de supercomputació](bsc)?
+    - per qué es fa al [bsc-cns]](bsc)
+    - per què es fa al [centro nacional de supercomputación](bsc)
+    - què és el [barcelona supercomputing center](bsc)
+    - per què el [centre de supercomputació](bsc)
     
 - intent: faq/fake
   examples: |
-    - esteu treballant en l'exèrcit de robots d'en Puigneró?
-    - són certs els informes de la guardia civil?
-    - Els robots d’en Puigneró parlaràn Català?
-    - esteu fent robots de guerra?
-    - és veritat que el puigneró està fent robots de guerra?
+    - esteu treballant en l'exèrcit de robots d'en Puigneró
+    - són certs els informes de la guardia civil
+    - Els robots d’en Puigneró parlaràn Català
+    - esteu fent robots de guerra
+    - és veritat que el puigneró està fent robots de guerra
     - robots de guerra
-    - és veritat el que diuen els informes de la guàrdia civil?
-    - què passa amb el tema dels robots?
-    - de veritat que feu robots de guerra?
+    - és veritat el que diuen els informes de la guàrdia civil
+    - què passa amb el tema dels robots
+    - de veritat que feu robots de guerra
 
 - intent: faq/marenostrum
   examples: |
-    - Què és el [mare nostrum](marenostrum)?
-    - què vol dir [marenostrum](marenostrum)?
-    - Quin paper juga el [superordinador](marenostrum) al projecte?
-    - què és el [superor computador](marenostrum)?
-    - teniu un [superocomputador](marenostrum)?
-    - quin [super ordinador](marenostrum) feu servir?
-    - feu servir el [marenostrum]](marenostrum)?
-    - per què necessiteu una [super computadora](marenostrum)?
-    - feu servir una [supercomputadora](marenostrum)?
-    - què és un [superordinador](marenostrum)?
+    - Què és el [mare nostrum](marenostrum)
+    - què vol dir [marenostrum](marenostrum)
+    - Quin paper juga el [superordinador](marenostrum) al projecte
+    - què és el [superor computador](marenostrum)
+    - teniu un [superocomputador](marenostrum)
+    - quin [super ordinador](marenostrum) feu servir
+    - feu servir el [marenostrum]](marenostrum)
+    - per què necessiteu una [super computadora](marenostrum)
+    - feu servir una [supercomputadora](marenostrum)
+    - què és un [superordinador](marenostrum)
 
+- intent: faq/models
+  examples: |
+    - Com s’entrenen els models de llenguatge
+    - com es fa un model de llenguatge
+    - què vol dir entrenar un model de llenguatge
+    - el llenguatge s’entrena
+    - què és un model de llenguatge
+    - Què vol dir model
+    - Què és un model
+    - quines tasques puc fer amb un model de llenguatge?
+    - com puc fer servir el models de llenguatge?
+
+- intent: faq/licitacio
+  examples: |
+    - Com s’ha avaluat la licitació d’AINA
+    - Què és la licitació
+    - per què heu feu licitacions
+    - quin era l’objectiu de les licitacions
+    - com s’han fet les licitacions
+  
+- intent: faq/dades
+  examples: |
+    - D’on surten les dades dels vostres models
+    - com puc saber si esteu utilitzant dades meves
+    - d’on traieu tantes dades
+    - d’on venen les dades
+    - què heu fet per aconseguir tants textos
+
+
+  
+- intent: faq/beneficiaris
+  examples: |
+    - i tothom ho pot utilitzar
+    - qui ho pot fer servir
+    - esteu treballant per alguna empresa concreta
+    - les universitats també poden fer servir els vostres models
+    - les pimes també poden fer servir els vostres models.
+    - m’interessen els vostres corpus, què he de fer per aconseguir-los
+
+  
+- intent: faq/web
+  examples: |
+    - quina és la vostra pàgina web
+    - em pots dir la vostra web
+    - quina és la url
+    - quina és la web del projecte aina
+    - web de l’aina
+    - quin és el web de l’aina
+    - teniu pàgina web
+    - Quina és la pàgina web
+
+- intent: faq/revifar
+  examples: |
+    - Com poden ajudar les tecnologies del llenguatge a revifar el català
+    - Què pot fer la IA pel català
+    - el projecte Aina salvarà el català
 
 ### entitats
 
@@ -522,6 +721,10 @@ nlu:
     - Google
     - googlemaps
     - Google Assistant
+    - Jasper
+    - Cortana
+    - Google Maps
+    - Bixby
     
 - synonym: PER
   examples: |
@@ -560,3 +763,21 @@ nlu:
     - marenostrum
     - MareNostrum
     - mare nostrum
+
+- synonym: lang
+  examples: |
+    - anglès
+    - alemany
+    - japonès
+    - rus
+    - ucraïnès
+    - suahili
+    - aragonès
+    - basc
+    - xinès
+    - balear
+    - mallorquí
+    - menorquí
+    - lleidatà
+    - gironí
+    - italià

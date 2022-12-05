@@ -45,6 +45,41 @@ mesos_db = {1: "gener",
     11: "novembre",
     12: "desembre"}
 
+def whats_the_time():
+    x = datetime.now()        
+    hora = nice_time(datetime.now(pytz.timezone('Europe/Madrid')), variant="full_bell")
+    dia = x.strftime("%a")    
+    if x.hour <= 13:
+        salut = "Bon dia"
+    elif x.hour < 21:
+        salut = "Bona tarda"
+    else:
+        salut = "Bona nit"
+        
+    if hora[:2] == "un" or hora[:2] == "la" or hora[:3] == "mig":
+        verb = "és"
+    else:
+        verb = "són"
+        
+    msg = f"{verb} {hora} del {dies_db[dia]} {x.day} de {mesos_db[x.month]}."
+    #msg = "hola rata"
+    
+    return salut, msg
+
+class ActionWelcome(Action):
+
+    def name(self) -> Text:
+        return "action_welcome"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            
+        salut, msg = whats_the_time()
+        dispatcher.utter_message(text=salut + ", " + msg)
+        
+        return []
+    
 class ActionTellCatalanTime(Action):
 
     def name(self) -> Text:
@@ -54,20 +89,12 @@ class ActionTellCatalanTime(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
-        x = datetime.now()        
-        hora = nice_time(datetime.now(pytz.timezone('Europe/Madrid')), variant="full_bell")
-        dia = x.strftime("%a")    
-        if x.hour <= 13:
-            salut = "Bon dia"
-        elif x.hour < 21:
-            salut = "Bona tarda"
-        else:
-            salut = "Bona nit"
-        msg = f"{salut}, són {hora} del {dies_db[dia]} {x.day} de {mesos_db[x.month]}."
-        #msg = "hola rata"
-        dispatcher.utter_message(text=msg)
+        salut, msg = whats_the_time()
+        dispatcher.utter_message(text=msg[0].upper() + msg[1:])
         
         return []
+    
+
 
 
 city_db = {

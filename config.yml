@@ -16,8 +16,8 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model (seguint les recomanacions per a SpaCy) for more information.
 
   - name: SpacyNLP
-    model: "ca_core_news_lg"
-    #model: "ca_bsc_demo_trf"
+    #model: "ca_core_news_lg"
+    model: "ca_bsc_demo_trf"
     case_sensitive: False
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
@@ -45,7 +45,7 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
   - name: FallbackClassifier
-    threshold: 0.25
+    threshold: 0.60
     ambiguity_threshold: 0.1
 
 
