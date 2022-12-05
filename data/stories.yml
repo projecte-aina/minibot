@@ -119,8 +119,8 @@ stories:
   #- action: utter_sorry
 
   
-- story: praise
-  steps:
-  - intent: praise
-  - action: utter_praise
+#- story: praise
+  #steps:
+  #- intent: praise
+  #- action: utter_praise
   

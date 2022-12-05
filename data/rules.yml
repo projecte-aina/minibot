@@ -20,10 +20,10 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
   
-- rule: praise
-  steps:
-  - intent: praise
-  - action: utter_praise
+#- rule: praise
+  #steps:
+  #- intent: praise
+  #- action: utter_praise
 
 - rule: thank you
   steps:
@@ -35,20 +35,27 @@ rules:
   - intent: insult
   - action: utter_insult
   
-- rule: respon com estàs
-  steps:
-  - intent: how_are_you
-  - action: utter_fine
+- rule: digues l'hora
+  - intent: hora
+  - action: action_tell_catalan_time
+  
+- rule: disculpa't quan s'enfaden
+  - intent: frustracio
+  - action: utter_frustracio
+#- rule: respon com estàs
+  #steps:
+  #- intent: how_are_you
+  #- action: utter_fine
 
-- rule: respon nom
-  steps:
-  - intent: your_name
-  - action: utter_name
+#- rule: respon nom
+  #steps:
+  #- intent: your_name
+  #- action: utter_name
  
-- rule: digues encantat quan et diuen el nom
-  steps:
-  - intent: my_name
-  - action: utter_encantat
+#- rule: digues encantat quan et diuen el nom
+  #steps:
+  #- intent: my_name
+  #- action: utter_encantat
 
 - rule: respon les faqs
   steps:
@@ -64,13 +71,18 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_fallback
-
-- rule: happy mood
-  steps:
-  - intent: mood_great
-  - action: utter_happy
   
-- rule: unhappy mood
+- rule: chitchat
   steps:
-  - intent: mood_unhappy
-  - action: utter_cheer_up
+  - intent: chitchat
+  - action: utter_chitchat
+
+#- rule: happy mood
+  #steps:
+  #- intent: mood_great
+  #- action: utter_happy
+  
+#- rule: unhappy mood
+  #steps:
+  #- intent: mood_unhappy
+  #- action: utter_cheer_up

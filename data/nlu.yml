@@ -14,22 +14,9 @@ nlu:
     - bona nit
     - ei, tu!
     - epa
-
-- intent: my_name
-  examples: |
-    - em dic [Eulàlia](PER)
-    - El meu nom és [Miquel](PER)
-    - Em diuen [Joan](PER)
-    - [Carme](PER)
-    - [Marieta](PER)
-    - [Francesc](PER)
-    - em dic [ona](PER)
-    - El meu nom és [ferran](PER)
-    - Em diuen [Marta](PER)
-    - [Roger](PER)
-    - [Agnès](PER)
-    - [mireia](PER)
-   
+    - Uep! Com anam?
+    - Ei, com va?
+    - hola?
     
 - intent: goodbye
   examples: |
@@ -76,23 +63,6 @@ nlu:
     - crec que no
     - passo
     - ni parlar-ne
-
-- intent: mood_great
-  examples: |
-    - fantàstic
-    - estic bé
-    - em sento bé
-    - estic genial
-    - bé, gràcies
-
-- intent: mood_unhappy
-  examples: |
-    - pfff, fatal
-    - estic molt trist
-    - com una merda
-    - de pena
-    - em vull morir
-    - psè
     
 - intent: thank_you
   examples: |
@@ -103,6 +73,17 @@ nlu:
     - thanks
     - t'ho agraeixo
     
+- intent: hora
+  examples: |
+    - quina hora és?
+    - tens hora?
+    - quantes en tenim?
+    - quants en tenim avui?
+    - em pots dir l'hora?
+    - que tens hora?
+    - quina hora tens?
+    - quines hores són?
+    
 - intent: bot_challenge
   examples: |
     - ets un bot?
@@ -112,30 +93,20 @@ nlu:
     - ets humà?
     - qui ets?
     - què ets?
+    - qui t'ha fet?
+    
+    
+- intent: faq/your_use
+  examples: |
     - per a què serveixes?
     - què fas?
     - En què em pots ajudar?
     - de què serveixes?
-    - qui t'ha fet?
-    
-- intent: your_name
-  examples: |
-    - com et dius?
-    - quin nom tens
-    - tens nom?
-    - com et diuen?
-    
-- intent: praise
-  examples: |
-    - ets una [monada](pos)
-    - ets molt [mono](pos)
-    - funciones molt bé
-    - que [xulo](pos)!
-    - ets molt [guai](pos)
-    - te'n surts molt bé
-    - ho fas molt bé
-    - caram, que guai
-
+    - què saps fer?
+    - què et puc preguntar?
+    - quina mena d'informacions dones?
+    - quines coses et puc preguntar?
+ 
 - intent: insult
   examples: |
     - ets un [inútil](insult)
@@ -145,20 +116,12 @@ nlu:
     - [idiota](insult)
     - [estúpid](insult)
     - quin xatbot més [inútil](insult)
-    
-- intent: how_are_you
-  examples: |
-    - estic bé, i tu?
-    - com estàs?
-    - i tu, com estàs?
-    - què se sent, de ser un bot?
-    - i tu?
-    - com va?
-    - com anem?
+    - ai, per favor, que [idiota](insult) que arribes a ser!
+    - mira que arribes a ser [imbècil](insult)
+    - més [tonto](insult) i no neixes
     
 - intent: out_of_scope
   examples: |
-    - quina hora és?
     - quan serà independent Catalunya?
     - quan volaran els cotxes?
     - qui serà el nou president?
@@ -169,7 +132,87 @@ nlu:
     - els companys d'escola del meu fill no parlen català, què fareu al respecte?
     - Creus que el català està en perill d’extinció?
     - esteu intentant adoctrinar els nens amb la tecnologia?
+    
+- intent: frustracio
+  examples: |
+    - et repeteixes
+    - no m'entens
+    - això ja ho has dit
+    - no funciones bé
+    
+- intent: chitchat/mood_great
+  examples: |
+    - fantàstic
+    - estic bé
+    - em sento bé
+    - estic genial
+    - bé, gràcies
 
+- intent: chitchat/mood_unhappy
+  examples: |
+    - pfff, fatal
+    - estic molt trist
+    - com una merda
+    - de pena
+    - em vull morir
+    - psè
+    
+- intent: chitchat/my_name
+  examples: |
+    - em dic [Eulàlia](PER)
+    - El meu nom és [Miquel](PER)
+    - Em diuen [Joan](PER)
+    - [Carme](PER)
+    - [Marieta](PER)
+    - [Francesc](PER)
+    - em dic [ona](PER)
+    - El meu nom és [ferran](PER)
+    - Em diuen [Marta](PER)
+    - [Roger](PER)
+    - [Agnès](PER)
+    - [mireia](PER)
+    
+- intent: chitchat/your_name
+  examples: |
+    - com et dius?
+    - quin nom tens
+    - tens nom?
+    - com et diuen?
+    - t'han posat nom?
+    - quin és el teu nom?
+    - com et criden?
+    - com te criden?
+    - que has nom?
+    
+- intent: chitchat/mes_preguntes
+  examples: |
+    - tinc una altra pregunta
+    - et vull fer més preguntes
+    - et vull preguntar més coses
+    - t'he de preguntar una altra cosa
+    - tinc més preguntes
+    
+- intent: chitchat/praise
+  examples: |
+    - ets una [monada](pos)
+    - ets molt [mono](pos)
+    - funciones molt bé
+    - que [xulo](pos)!
+    - ets molt [guai](pos)
+    - te'n surts molt bé
+    - ho fas molt bé
+    - caram, que guai
+    
+- intent: chitchat/how_are_you
+  examples: |
+    - estic bé, i tu?
+    - com estàs?
+    - i tu, com estàs?
+    - què se sent, de ser un bot?
+    - i tu?
+    - com va?
+    - com anem?
+    
 - intent: faq/aina
   examples: |
     - què és el projecte Aina?
@@ -177,6 +220,7 @@ nlu:
     - de què va l'aina?
     - què és aina?
     - qui és Aina?
+    - què me'n pots explicar del projecte aina?
     
 - intent: faq/objectius
   examples: |
@@ -201,8 +245,6 @@ nlu:
 - intent: faq/finan
   examples: |
     - quant val el projecte Aina?
-    - qui paga el projecte Aina?
-    - això qui ho paga?
     - quin finançament té previst?
     - quan val?
     - què costa?
@@ -210,6 +252,12 @@ nlu:
     - quin pressupost té?
     - quin preu té?
     - quant n'estem pagant?
+    - Qui paga aquest projecte?
+    - Però qui ho paga?
+    - els diners d'on surten?
+    - qui paga el projecte Aina?
+    - això qui ho paga?
+    
     
 - intent: faq/gent
   examples: |
@@ -218,6 +266,12 @@ nlu:
     - qui ho fa?
     - qui és el responsable de desenvolupar el projecte?
     - qui lidera el projecte?
+    - i qui ho fa tot això?
+    - qui se'n carrega del desenvolupament del projecte?
+    - on es porta a termini aquest projecte?
+    - a on es porta a terme aquest projecte?
+    - qui porta a terme el projecte?
+    - qui s'ocupa d'aquest projecte?
 
     
 - intent: faq/temps
@@ -249,6 +303,11 @@ nlu:
     - en què s’ha invertit fins ara?
     - de què han servit aquests diners?
     - què heu fet amb la pasta?
+    - Quan hi haurà els primers resultats? 
+    - Quan tindreu els primers assistents personals? 
+    - Quan veurem els primers resultars? 
+    - quan podrem fer servir els resultats?
+
 
     
 - intent: faq/info
@@ -261,6 +320,8 @@ nlu:
     - com puc saber què s’està desenvolupant en aquest projecte?
     - info
     - més info
+    - informació?
+    
     
 - intent: faq/ia
   examples: |
@@ -320,7 +381,7 @@ nlu:
     - i després, què?
     - què passarà amb aquestes dades quan s'acabi el projecte?
 
-- intent: faq/vocabulari
+- intent: faq/corpus
   examples: |
     - Què vol dir corpus?
     - Què és un corpus?
@@ -382,6 +443,11 @@ nlu:
     - Només treballeu amb el català de Catalunya?
     - Quan fareu alguna cosa per l'occità?
     - També treballeu amb el castellà?
+    - Quina llengua cobreix el projecte?
+    - aquest projecte inclou també el balear?
+    - inclou al valencià?
+    - què feu amb el valencià?
+    - també feu alguerès?
     
 - intent: faq/bloom
   examples: |
@@ -393,8 +459,39 @@ nlu:
     - l’aina ha participat en el projecte bloom?
     - com ho heu fet perquè el català estigui en el Bloom?
 
+- intent: faq/bsc
+  examples: |
+    - què és el [bsc](bsc)?    
+    - que hi pinta el [barcelona supercomputing center](bsc)
+    - per qué es fa al [bsc-cns]](bsc)?
+    - per què es fa al [centro nacional de supercomputación](bsc)?
+    - què és el [barcelona supercomputing center](bsc)?
+    - per què el [centre de supercomputació](bsc)?
+    
+- intent: faq/fake
+  examples: |
+    - esteu treballant en l'exèrcit de robots d'en Puigneró?
+    - són certs els informes de la guardia civil?
+    - Els robots d’en Puigneró parlaràn Català?
+    - esteu fent robots de guerra?
+    - és veritat que el puigneró està fent robots de guerra?
+    - robots de guerra
+    - és veritat el que diuen els informes de la guàrdia civil?
+    - què passa amb el tema dels robots?
+    - de veritat que feu robots de guerra?
 
-
+- intent: faq/marenostrum
+  examples: |
+    - Què és el [mare nostrum](marenostrum)?
+    - què vol dir [marenostrum](marenostrum)?
+    - Quin paper juga el [superordinador](marenostrum) al projecte?
+    - què és el [superor computador](marenostrum)?
+    - teniu un [superocomputador](marenostrum)?
+    - quin [super ordinador](marenostrum) feu servir?
+    - feu servir el [marenostrum]](marenostrum)?
+    - per què necessiteu una [super computadora](marenostrum)?
+    - feu servir una [supercomputadora](marenostrum)?
+    - què és un [superordinador](marenostrum)?
 
 
 ### entitats
@@ -442,3 +539,24 @@ nlu:
     - interessant
     - bonic
     - xulo
+
+- synonym: bsc
+  examples: |
+    - bsc
+    - barcelona supercomputing center
+    - bsc-cns
+    - centro nacional de supercomputación
+    - barcelona supercomputing center
+    - centre de supercomputació
+    
+- synonym: marenostrum
+  examples: |
+    - superordinador
+    - super ordinador
+    - super computador
+    - super computadora
+    - supercomputador
+    - supercomputadora
+    - marenostrum
+    - MareNostrum
+    - mare nostrum
