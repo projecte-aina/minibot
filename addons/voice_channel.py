@@ -55,7 +55,7 @@ class SocketIOVoiceOutput(OutputChannel):
             else:
                 q['speaker_id'] = "pau"
 
-            audioEndpoint = f"{self.tts_url}/api/tts/?{urlencode(q)}"
+            audioEndpoint = f"{self.tts_url}/api/tts?{urlencode(q)}"
             logger.info(audioEndpoint)
             audio = urlopen(audioEndpoint).read()
             logger.debug(f"_send_message- Calling Speech Endpoint: {audioEndpoint}")
