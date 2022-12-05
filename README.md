@@ -86,7 +86,6 @@ If you made any changes to the custom actions, then build the image with:
 docker build . -t bsctemu/aina-minibot-custom-actions-server:<YOUR_VERSION> -f DockerfileActions
 docker tag bsctemu/aina-minibot-custom-actions-server:<YOUR_VERSION> bsctemu/aina-minibot-custom-actions-server:latest
 docker push bsctemu/aina-minibot-custom-actions-server:latest
-
 ```
 
 ## Deploy via docker compose (using Rasa X)

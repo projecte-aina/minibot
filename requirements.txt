@@ -15,7 +15,6 @@ bidict==0.22.0
 blis==0.7.9
 boto3==1.26.11
 botocore==1.29.11
-ca-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ca_core_news_lg-3.4.0/ca_core_news_lg-3.4.0-py3-none-any.whl
 CacheControl==0.12.11
 cachetools==5.2.0
 catalogue==2.0.8
