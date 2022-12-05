@@ -64,6 +64,13 @@ npx http-server .
 * [laguage support](https://rasa.com/docs/rasa/language-support/)
 * [installation](https://rasa.com/docs/rasa/installation/)
 
+
+## Install required models
+
+```bash 
+python -m pip install --no-cache-dir --upgrade -r models_requirements.txt
+```
+
 ## Build rasa docker image
 
 To build rasa docker image use: 
