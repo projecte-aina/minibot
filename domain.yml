@@ -1,5 +1,7 @@
 version: "3.1"
-
+config:
+  store_entities_as_slots: True
+  
 intents:
   - greet
   - goodbye
@@ -16,30 +18,64 @@ intents:
   - out_of_scope
   - nlu_fallback
   - thank_you
+  - chitchat
+  - frustracio
+  - hora
+  - tot
+  - my_name:
+        use_entities:
+        - PER
+     
   
 entities:
   - insult
   - product
+  - PER
+  - pos
+  - MISC
+  - ORG
+  - LOC
+  - lang
+ 
 
+slots:
+  PER:
+    type: text
+ #   influence_conversation: false
+    initial_value: "Persona"
+    mappings:
+    - type: from_entity
+      entity: PER
+      intent: my_name
+    
 responses:
 
 ### bàsics
+
+  utter_my_name:
+    #- condition:
+      #- type: slot
+        #name: PER
+        #value: PER
+  - text: "Hola, {PER}, molt de gust"
+  - text: "Hola, {PER}, com estàs?"
+  - text: "Hola, molt de gust"
+    
+  utter_ask_name:
+  - text: "Com et dius?"
+  
   utter_greet:
-  - text: "Hola! Com estàs?"
-  - text: "Ei! Com va?"
-  - text: "Ep! Com anem?"
-
-  utter_cheer_up:
-  - text: "Mira això si t'anima:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "T'ha anat bé?"
-  - text: "Estàs millor?"
-
-  utter_happy:
-  - text: "Genial, que duri!"
-  - text: "Que bé, me n'alegro"
+  #- text: "Hola! Com estàs?"
+  #- text: "Ei! Com va?"
+  #- text: "Ep! Com anem?"
+  #- text: "Soc el bot del projecte Aina. Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Si vols, puc respondre algunes preguntes sobre el projecte Aina."
+  - text: "Soc el bot del projecte Aina. Soc una demostració de com es pot incorporar veu a un xatbot.\nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols fer-me alguna pregunta sobre el projecte Aina?"
+  - text: "Soc el bot del projecte Aina.Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols saber alguna cosa sobre el projecte Aina?"
+  - text: "Soc el bot del projecte Aina.Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Si tens alguna pregunta sobre el projecte Aina, puc mirar de respondre't."
+  
+  utter_ask:
+  - text: "Què vols saber en concret?"
+  - text: "Què vols preguntar?"
 
   utter_goodbye:
   - text: "Adéu"
@@ -48,31 +84,30 @@ responses:
   - text: "Torna quan vulguis!"
 
   utter_iamabot:
-  - text: "Soc un bot de demostració del projecte Aina. Puc respondre algunes preguntes sobre el projecte."
+  - text: "Soc un bot de demostració del projecte Aina, desenvolupat amb Rasa per la Unitat de mineria de textos del BSC. Puc respondre algunes preguntes sobre el projecte."
+  
+  utter_faq/your_use:
+  - text: "Puc respondre agunes preguntes relacionades amb el projecte Aina."
+  - text: "Responc preguntes sobre el projecte Aina"
 
-  utter_name:
-  - text: "Soc un bot de demostració del projecte Aina, encara no m'han posat nom."
-  - text: "No tinc nom, ja demanaré que me'n posin un."
-  - text: "Per alguna raó, no m'han posat nom. Devien anar amb presses, o així."
+  utter_sorry:
+  - text: "Em sap greu, no m'han programat per animar a les persones. No sé si t'animarà, però si vols, puc respondre algunes preguntes sobre el projecte Aina."
 
-  utter_praise:
-  - text: "Gràcies :-)"
-  - text: "Ets molt amable."
-
-  utter_fine:
-  - text: "Uhm... soc un xatbot, no m'ho puc plantejar"
-  - text: "Ostres, no m'ho havia preguntat mai ningú! Estic bé, gràcies."
+  utter_frustracio:
+  - text: "Ostres, em sap greu, em sembla que no t'estic entent bé. Pots mirar de fer la pregunta amb unes altres paraules?"
+  - text: "Vaja, potser no ho estic fent prou bé... pots intentar preguntar amb unes altres paraules?"
   
   utter_insult:
   - text: "Si jo fos un humà, no aniria perdent el temps insultant els altres"
   
   utter_out_of_scope:
-  - text: "No tinc aquesta informació, però em pots preguntar coses sobre mi i sobre el projecte Aina"
+  - text: "No tinc aquesta informació, però em pots preguntar coses sobre el projecte Aina"
   - text: "Ostres, això no ho sé."
   - text: "Vaja, aquesta informació no la tinc, però puc respondre a preguntes sobre el projecte Aina"
   
   utter_fallback:
   - text: "Ho sento, no t'he entès. Pots dir-ho amb unes altres paraules?"
+  - text: "Perdona, no t'he entès. Prova de dir-m'ho amb unes altres paraules, si us plau."
   
   utter_welcome:
   - text: "De res :-)"
@@ -80,10 +115,45 @@ responses:
   - text: "M'encanta haver-te ajudat"
   - text: "Celebro haver estat útil"
   
+  utter_tot:
+  - text: "Intenta pensar en alguna pregunta concreta."
+  - text: "Vols saber alguna cosa en concret?"
+  - text: "Hauries de fer preguntes concretes-"
+  
+### chitchat 
+
+  utter_chitchat/mood_unhappy:
+  - text: "Mira això si t'anima:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "T'ha anat bé?"
+  - text: "Estàs millor?"
+
+  utter_chitchat/mood_great:
+  - text: "Genial, que duri!"
+  - text: "Que bé, me n'alegro"
+  
+  utter_chitchat/your_name:
+  - text: "Soc un bot de demostració del projecte Aina, encara no m'han posat nom."
+  - text: "No tinc nom, ja demanaré que me'n posin un."
+  - text: "Per alguna raó, no m'han posat nom. Devien anar amb presses, o així."
+
+  utter_chitchat/praise:
+  - text: "Gràcies :-)"
+  - text: "Ets molt amable."
+
+  utter_chitchat/how_are_you:
+  - text: "Uhm... soc un xatbot, no m'ho puc plantejar"
+  - text: "Ostres, no m'ho havia preguntat mai ningú!"
+  
+  utter_chitchat/mes_preguntes:
+  - text: "Endavant, digues"
+  - text: "Perfecte, espero saber la resposta!"
 ### faq del projecte Aina
 
   utter_faq/aina:
-  - text: "El projecte Aina és una iniciativa de Departament de la Vicepresidència i de Polítiques Digitals i Territori, amb la col·laboració del Barcelona Supercomputing Center, per impulsar la intel·ligència artificial en català."
+  - text: "El projecte Aina és una iniciativa de la Generalitat de Catalunya, amb la col·laboració del Barcelona Supercomputing Center, per impulsar la intel·ligència artificial en català."
   
   utter_faq/objectius:
   - text: "L'objectiu del projecte Aina és desenvolupar la intel·ligència artificial en català, de manera que els ciutadans catalanoparlants hi tinguin accés en igualtat de condicions que els parlants d'altres llengües amb més recursos."
@@ -93,6 +163,9 @@ responses:
 
   utter_faq/finan:
   - text: "El projecte té un pressupost global de 13,5 milions d'euros per al període 2020-2024."
+  
+  utter_faq/qui_finan:
+  - text: "El projecte està finançat per la Generalitat de Catalunya"
   
   utter_faq/gent:
   - text: "La unitat de Text Mining del Barcelona Supercomputing Center s'ocupa de la part tècnica del projecte."
@@ -118,6 +191,90 @@ responses:
   utter_faq/commonvoice:
   - text: "El Common Voice és un projecte de la fundació Mozilla per aconseguir un gran corpus de veus. Hi pots col·laborar enregistrant frases o validant les frases que han enregistrat altres usuaris."
   - text: "El Common Voice és un gran corpus de veus. Necessitem que hi hagi representats tots els accents, per això ens pots ajudar gravant frases, o validant les frases que han gravat altres persones."
+  
+  utter_faq/ia:
+  - text: "La intel·ligència artificial és el desenvolupament d'algorismes que permeten que una màquina es comporti com si tingués una intel·ligència semblant a la humana. El projecte Aina treballa en un subcamp de la intel·ligència artificial que es diu Processament del Llenguatge Natural."
+  
+  utter_faq/perque:
+  - text: "Els models d’intel·ligència artificial que depenen de l’idioma són molt costosos de desenvolupar, i sovint les empreses deixen de banda les llengües amb menys parlants perquè consideren que no els surt a compte invertir-hi. Convé doncs que les les administracions públiques els financiïn, per garantir que els ciutadans que parlen aquestes llengües tinguin els mateixos drets que la resta."
+
+  utter_faq/perque_ia:
+  - text: "La intel·ligència artificial pot ajudar les persones a viure més fàcilment en el seu dia a dia, per això cal vetllar perquè tothom hi tingui accés en igualtat de condicions."
+  
+  utter_faq/perque_aina:
+  - text: "El projecte rep el nom d'AINA en homenatge a la filòloga menorquina Aina Moll."
+  
+  utter_faq/aina_moll:
+  - text: "Aina Moll va ser una figura central de la promoció i la normalització del català i primera directora general de Política Lingüística de la Generalitat de Catalunya del 1980 al 1988."
+  - text: "Aina Moll fou una filòloga menorquina, figura central de la cultura i la normalització del català a les Balears i Catalunya."
+  
+  utter_faq/ovelles_electriques:
+  - text: "La intel·ligència artificial fa que les màquines es comportin com si fossin intel·ligents, però això no les converteix en éssers pensants o sensibles. Si més no, no actualment."
+  
+  utter_faq/collaboradors:
+  - text: "FALTA RESPOSTA. Pregunta sobre els col·laboradors"
+  
+  utter_faq/stt:
+  - text: "FALTA RESPOSTA. Pregunta sobre STT"
+  
+  utter_faq/despres:
+  - text: "Quan el projecte s’hagi acabat, tot el que haurem desenvolupat seguirà disponible, perquè ho estem publicant als portals de referència amb llicències permisives. Així, ho pot utilitzar tothom qui ho vulgui, sigui ara o més endavant, quan el projecte s’hagi acabat."
+  
+  utter_faq/corpus:
+  - text: "Dins del projecte tractem amb diverses dades, tant textuals com de veu.\nEls corpus són conjunts de dades relativament grans, i els datasets, conjunts de dades anotades per una tasca específica. Amb aquests dos tipus de dades podem entrenar els models.\nUn model, en canvi, és la implementació d’un algoritme que permet prendre decisions lògiques a partir de les dades disponibles."
+  
+  utter_faq/perill:
+  - text: "Com totes les tecnologies, la intel·lgència artificial pot tenir certs riscos associats. Des del projecte Aina en som molt conscients i treballem per minimitzar-ne els riscos mentre procurem que els avantatges siguin disponibles per a tothom."
+  
+  utter_faq/biaixos:
+  - text: "La intel·ligència artificial reprodueix tasques humanes aprenent d’exemples reals. Per això pot ser que aprengui biaixos que existeixen en la societat o que emeti llenguatge ofensiu. Des del projecte AINA estem treballant per reduir aquests riscos."
+
+  utter_faq/pln:
+  - text: "El Processament del llenguatge natural és la disciplina que s'encarrega de tractar computacionalment el llenguatge natural, és a dir, les llengües humanes."
+  
+  utter_faq/altres_llengues:
+  - text: "Actualment estem treballant amb el català, en totes les seves varietats. I tenim en el full de ruta per més endavant afegir altres llengües com l’occità."
+  
+  utter_faq/bsc:
+  - text: "El Centre de Supercomputació de Barcelona o Barcelona Supercomputing Center-Centro Nacional de Supercomputación és un centre de recerca públic. Té la funció d’oferir infraestructures i servei en supercomputació i també la de generar coneixement i tecnologia per transferir-los a la societat. Es troba a Barcelona i allotja el superordinador MareNostrum."
+  
+  utter_faq/fake:
+  - text: "Des del projecte Aina no estem construint armes de guerra, però sí que estem creant eines per ajudar a combatre la desinformació."
+  
+  utter_faq/marenostrum:
+  - text: "El MareNostrum és el superordinador més potent de l'estat espanyol i un dels més potents d'Europa en quant a capacitat d'operacions en coma flotant per segon."
+  
+  utter_faq/models:
+  - text: "Un model de llenguatge és un programa informàtic entrenat per actuar com si entengués el llenguatge humà. Aquest procés d'entrenament es fa utilitzant grans conjunt de dades. \nEs poden distingir dues fases: la fase de pre-entrenament, en què l’entrenament se centra en una comprensió general de la llengua, i el procés d'entrenament específic, en què es focalitza l’entrenament en una tasca concreta, com ara classificació de textos, anàlisis de sentiment o anàlisi morfològica."
+  
+  utter_faq/bloom:
+  - text: "El Bloom és el primer model generatiu d'intel·ligència artificial lliure i multilingüe. Es tracta d'un model que ha estat possible gràcies a la col·laboració de centenars de grups d'investigació d'arreu del món, entre ells, també hi trobem la participació del Projecte Aina, que ha permès que el català sigui una de les 59 llengües que el conformen."
+  
+  utter_faq/catala:
+  - text: "El català és una llengua romànica parlada a Catalunya, les illes Balears, en bona part del País Valencià, Andorra, la Catalunya Nord, la franja d’Aragó, el Carxe i la ciutat de l’Alguer. Té deu milions de parlants, dels quals gairebé la meitat ho són de llengua materna."
+ 
+  utter_faq/licitacio:
+  - text: "Com que necessitem molts corpus anotats, el BSC va treure a licitació el servei de creació i anotació de conjunts de dades que es requereixen per entrenar, adaptar i avaluar models aptes per a tasques específiques, com ara la transcripció i traducció automàtiques, la generació de resums, la detecció de sentiment, les descripcions d'escena, etc. Aquesta licitació va incloure 9 lots.\nLes ofertes presentades han estat  seleccionades i avaluades i s’han adjudicat els contractes a aquelles que compleixen la millor relació qualitat preu."
+
+  
+  utter_faq/dades:
+  - text: "Totes les dades que fem servir són públiques, és a dir, obtingudes de la web degudament on els permisos ho permeten, o provenen d’acords amb institucions, com per exemple, els casos de Racó Català o Vilaweb.\nEn cas que un conjunt de dades pugui contenir informació sensible, el tractem de manera adequada amb un anonimitzador. Això impossibilita la reidentificació de la persona i ens permet utilitzar les dades per entrenar models del llenguatge, tot mantenint la seva privacitat."
+
+  
+  utter_faq/beneficiaris:
+  - text: "Posem a disposició de tothom tots els corpus i models que generem en el marc d’aquest projecte. Per aquest motiu, els publiquem a les plataformes de referència del sector amb llicències permissives."
+  
+  utter_faq/web:
+  - text: "La pàgina web oficial del projecte és aina.gencat.cat"
+  
+  utter_faq/revifar:
+  - text: "El projecte Aina treballa per assegurar la pervivència del català en un àmbit molt concret: el de la intel·ligència artificial."
+  
+actions:
+- action_tell_time
+- action_tell_catalan_time
+- action_welcome
+- action_hello_world
   
 session_config:
   session_expiration_time: 60

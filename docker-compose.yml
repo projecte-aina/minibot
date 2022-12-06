@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  rasa:
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command: run -vv --cors "*" --credentials /app/connectors/rasa/credentials.yml --enable-api --model models/latest.tar.gz --endpoints endpoints.yml
+  rasa-actions:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: DockerfileActions
+    ports:
+      - "5055:5055"
+    depends_on:
+      - rasa

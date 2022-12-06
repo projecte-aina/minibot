@@ -2,6 +2,14 @@ version: "3.1"
 
 rules:
 
+- rule: greet
+  steps:
+  - intent: greet
+  - action: action_welcome
+  - action: utter_greet
+
+
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -12,10 +20,10 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
   
-- rule: praise
-  steps:
-  - intent: praise
-  - action: utter_praise
+#- rule: praise
+  #steps:
+  #- intent: praise
+  #- action: utter_praise
 
 - rule: thank you
   steps:
@@ -27,16 +35,30 @@ rules:
   - intent: insult
   - action: utter_insult
   
-- rule: respon com estàs
+- rule: digues l'hora
   steps:
-  - intent: how_are_you
-  - action: utter_fine
-
-- rule: respon nom
-  steps:
-  - intent: your_name
-  - action: utter_name
+  - intent: hora
+  - action: action_tell_catalan_time
   
+- rule: disculpa't quan s'enfaden
+  steps:
+  - intent: frustracio
+  - action: utter_frustracio
+#- rule: respon com estàs
+  #steps:
+  #- intent: how_are_you
+  #- action: utter_fine
+
+#- rule: respon nom
+  #steps:
+  #- intent: your_name
+  #- action: utter_name
+ 
+- rule: digues encantat quan et diuen el nom
+  steps:
+  - intent: my_name
+  - action: utter_my_name
+
 - rule: respon les faqs
   steps:
   - intent: faq
@@ -51,5 +73,23 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_fallback
+  
+- rule: chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+  
+- rule: tot
+  steps:
+  - intent: tot
+  - action: utter_tot
 
-
+#- rule: happy mood
+  #steps:
+  #- intent: mood_great
+  #- action: utter_happy
+  
+#- rule: unhappy mood
+  #steps:
+  #- intent: mood_unhappy
+  #- action: utter_cheer_up

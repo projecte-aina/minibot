@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  rasa-production:
+    image: "bsctemu/aina-minibot:1.0.3"
+  rasa-worker:
+    image: "bsctemu/aina-minibot:1.0.3"
+    depends_on:
+      - rasa-production
+  app:
+    image: "bsctemu/aina-minibot-custom-actions-server:0.0.8"
+    expose:
+      - "5055"
+    depends_on:
+      - rasa-production

@@ -64,16 +64,58 @@ npx http-server .
 * [laguage support](https://rasa.com/docs/rasa/language-support/)
 * [installation](https://rasa.com/docs/rasa/installation/)
 
+
+## Install required models
+
+```bash 
+python -m pip install --no-cache-dir --upgrade -r models_requirements.txt
+```
+
 ## Build rasa docker image
 
 To build rasa docker image use: 
 
 ```bash
-docker build -t bsctemu/aina-minibot:<YOUR_VERSION> bsctemu/aina-minibot:latest .
+docker build -t bsctemu/aina-minibot:latest -t bsctemu/aina-minibot:<YOUR_VERSION> .
 ```
 
 Then, push the image to docker hub:
 
 ```bash
 docker push bsctemu/aina-minibot:<YOUR_VERSION>
+```
+
+
+## Build custom actions docker image (action server)
+
+If you made any changes to the custom actions, then build the image with:
+``` bash
+docker build . -t bsctemu/aina-minibot-custom-actions-server:<YOUR_VERSION> -f DockerfileActions
+docker tag bsctemu/aina-minibot-custom-actions-server:<YOUR_VERSION> bsctemu/aina-minibot-custom-actions-server:latest
+docker push bsctemu/aina-minibot-custom-actions-server:latest
+```
+
+## Deploy via docker compose (using Rasa X)
+
+Download and run Rasa X install script
+```bash
+curl -sSL -o install.sh https://storage.googleapis.com/rasa-x-releases/1.1.4/install.sh
+sudo bash ./install.sh
+```
+
+Clone this repo
+```bash
+git clone https://github.com/projecte-aina/minibot.git
+```
+
+Copy docker-compose.override.yml to Rasa X folder
+```bash
+cp minibot/rasax/docker-compose.override.yml /etc/rasa/docker-compose.override.yml
+```
+
+Start Rasa X and create new user for Rasa X admin panel 
+```bash
+cd /etc/rasa
+docker compose up -d
+sudo python3 rasa_x_commands.py create --update admin admin <some password here>
 ```
