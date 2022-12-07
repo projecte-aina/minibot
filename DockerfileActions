@@ -13,6 +13,7 @@ USER root
 RUN apt-get update && apt-get install --no-install-recommends -y git && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 # Install extra requirements for actions code, if necessary (uncomment next line)
+RUN python -m pip install --upgrade pip
 RUN pip install -r requirements-actions.txt
 
 # Copy actions folder to working directory

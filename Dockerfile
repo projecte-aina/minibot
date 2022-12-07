@@ -10,11 +10,10 @@ WORKDIR /app
 ## IMPORTANT: WHENEVER
 ENV PYTHONPATH "${PYTHONPATH}:/app/"
 
-COPY requirements.txt models_requirements.txt ./
+COPY requirements.txt ./
 
 RUN python -m pip install --upgrade pip
-RUN python -m pip install --default-timeout=100 --no-cache-dir --upgrade -r models_requirements.txt
-RUN python -m pip install --default-timeout=100 --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --default-timeout=1000 --no-cache-dir -r requirements.txt
 
 COPY . .
 

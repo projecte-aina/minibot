@@ -16,6 +16,7 @@ from sanic import Blueprint, response
 from sanic.request import Request
 from sanic.response import HTTPResponse
 from socketio import AsyncServer
+from service import stt_service as stt_service
 
 logger = logging.getLogger(__name__)
 
@@ -206,7 +207,7 @@ class SocketIOVoiceInput(InputChannel):
 
         @sio.on('user_uttered', namespace=self.namespace)
         async def handle_message(sid, data):
-            print(data)
+            # print(data)
 
             output_channel = SocketIOVoiceOutput(sio, self.bot_message_evt, self.tts_url, self.tts_voice)
             if data['message'] == "/get_started":
@@ -223,7 +224,10 @@ class SocketIOVoiceInput(InputChannel):
 
                 # fs, audio = wav.read(received_file)
                 # message = ds.stt(audio, fs)
-                message = "Bon dia!"
+                message = ""
+                for slice in stt_service.transcribe(received_file):
+                    message += slice[0]
+                    print(message)
 
                 await sio.emit(self.user_message_evt, {"text": message}, room=sid)
 

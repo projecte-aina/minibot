@@ -1,20 +1,31 @@
 version: '3.9'
 services:
+  tts-api:
+    restart: unless-stopped
+    image: "bsctemu/aina-tts-api:1.0.0"
+    expose:
+      - "8000"
+  stt-server:
+    restart: unless-stopped
+    image: "assistent/kaldi-catala:0.0.4"
+    expose:
+      - "5001"
   rasa:
     restart: unless-stopped
-    build:
-      context: .
+    image: "bsctemu/aina-minibot:local"
     ports:
       - "5005:5005"
-    volumes:
-      - ./:/app
-    command: run -vv --cors "*" --credentials /app/connectors/rasa/credentials.yml --enable-api --model models/latest.tar.gz --endpoints endpoints.yml
+    command: run --credentials credentials.yml --model models/latest.tar.gz --endpoints endpoints.yml --debug
+    environment:
+      - VOSK_SERVER_HOST=stt-server
+      - VOSK_SERVER_PORT=5001
+    depends_on:
+      - stt-server
+      - tts-api
   rasa-actions:
     restart: unless-stopped
-    build:
-      context: .
-      dockerfile: DockerfileActions
-    ports:
-      - "5055:5055"
+    image: "bsctemu/aina-minibot-actions-server:local"
+    expose:
+      - "5055"
     depends_on:
       - rasa

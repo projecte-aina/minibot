@@ -16,8 +16,6 @@ bidict==0.22.0
 blis==0.7.9
 boto3==1.26.11
 botocore==1.29.11
-ca-bsc-demo-trf @ https://huggingface.co/projecte-aina/ca_bsc_demo_trf/resolve/main/ca_bsc_demo_trf-any-py3-none-any.whl
-ca-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ca_core_news_lg-3.4.0/ca_core_news_lg-3.4.0-py3-none-any.whl
 CacheControl==0.12.11
 cachetools==5.2.0
 catalogue==2.0.8
@@ -70,7 +68,6 @@ Keras-Preprocessing==1.1.2
 kiwisolver==1.4.4
 langcodes==3.3.0
 libclang==14.0.6
-lingua-franca @ git+https://github.com/projecte-aina/lingua-franca.git@eb0d3f3416fd5ca084da711e38f2c8e58dd04fd9
 locket==1.0.0
 Markdown==3.4.1
 MarkupSafe==2.1.1
@@ -185,3 +182,4 @@ Werkzeug==2.2.2
 wrapt==1.14.1
 yarl==1.8.1
 zipp==3.10.0
+https://huggingface.co/projecte-aina/ca_bsc_demo_trf/resolve/main/ca_bsc_demo_trf-any-py3-none-any.whl

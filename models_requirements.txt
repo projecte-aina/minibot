@@ -1,2 +1,0 @@
-ca-core-news-lg @ https://github.com/explosion/spacy-models/releases/download/ca_core_news_lg-3.4.0/ca_core_news_lg-3.4.0-py3-none-any.whl
-ca_bsc_demo_trf @ https://huggingface.co/projecte-aina/ca_bsc_demo_trf/resolve/main/ca_bsc_demo_trf-any-py3-none-any.whl
