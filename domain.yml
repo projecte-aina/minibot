@@ -162,10 +162,10 @@ responses:
   - text: "Mitjançant el projecte Aina estem generant corpus i models informàtics de la llengua catalana i els posem a disposició de tothom, de manera que les empreses o col·lectius que creen aplicacions basades en la intel·ligència artificial, com ara assistents de veu, cercadors d’Internet, traductors i correctors automàtics, etcètera, puguin fer-ho fàcilment en català.\nTambé col·laborem amb la recerca en intel·ligència artificial en català, i treballem per situar el català en projectes internacionals."
 
   utter_faq/finan:
-  - text: "El projecte té un pressupost global de 13,5 milions d'euros per al període 2020-2024."
+  - text: "La Generalitat de Catalunya va finançar el projecte AINA el 2022 amb tres milions d’Euros. Està previst que el finançament segueixi fins el 2026 amb un total de 12 milions d’euros."
   
   utter_faq/qui_finan:
-  - text: "El projecte està finançat per la Generalitat de Catalunya"
+  - text: "Actualment el projecte està finançat per la Generalitat de Catalunya. D’altra banda, segons es va publicar recentment, el govern de l’estat també finançarà AINA i les tecnologies en les altres llengües de l’estat durant els propers 3 anys."
   
   utter_faq/gent:
   - text: "La unitat de Text Mining del Barcelona Supercomputing Center s'ocupa de la part tècnica del projecte."
@@ -212,10 +212,10 @@ responses:
   - text: "La intel·ligència artificial fa que les màquines es comportin com si fossin intel·ligents, però això no les converteix en éssers pensants o sensibles. Si més no, no actualment."
   
   utter_faq/collaboradors:
-  - text: "FALTA RESPOSTA. Pregunta sobre els col·laboradors"
+  - text: "El projecte AINA col·labora amb moltes entitats rellevants del territori, des d’empreses fins a entitats sense ànim de lucre. Pel que fa al finançament, per ara ve de la Generalitat de Catalunya. És pot trobar més informació a la pàgina del projecte."
   
   utter_faq/stt:
-  - text: "FALTA RESPOSTA. Pregunta sobre STT"
+  - text: "Per ajudar a les tasques de transcripció el projecte AINA està desenvolupant l'eina oTranscribe plus. És una aplicació de web i escriptori, fa les transcripcions amb els recursos del propi ordinador, per això és un servei gratuït i privat. Es pot trobar l'aplicació a l'adreça otranscribe.bsc.es."
   
   utter_faq/despres:
   - text: "Quan el projecte s’hagi acabat, tot el que haurem desenvolupat seguirà disponible, perquè ho estem publicant als portals de referència amb llicències permisives. Així, ho pot utilitzar tothom qui ho vulgui, sigui ara o més endavant, quan el projecte s’hagi acabat."
