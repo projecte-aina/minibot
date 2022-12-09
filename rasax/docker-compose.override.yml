@@ -1,9 +1,9 @@
 version: "3.4"
 services:
   rasa-production:
-    image: "bsctemu/aina-minibot:1.0.3"
+    image: "bsctemu/aina-minibot:1.0.4"
   rasa-worker:
-    image: "bsctemu/aina-minibot:1.0.3"
+    image: "bsctemu/aina-minibot:1.0.4"
     depends_on:
       - rasa-production
   app:

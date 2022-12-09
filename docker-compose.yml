@@ -12,7 +12,7 @@ services:
       - "5001"
   rasa:
     restart: unless-stopped
-    image: "bsctemu/aina-minibot:1.0.3"
+    image: "bsctemu/aina-minibot:1.0.4"
     ports:
       - "5005:5005"
     command: run --credentials credentials.yml --model models/latest.tar.gz --endpoints endpoints.yml --debug
