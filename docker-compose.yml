@@ -12,7 +12,7 @@ services:
       - "5001"
   rasa:
     restart: unless-stopped
-    image: "bsctemu/aina-minibot:local"
+    image: "bsctemu/aina-minibot:1.0.3"
     ports:
       - "5005:5005"
     command: run --credentials credentials.yml --model models/latest.tar.gz --endpoints endpoints.yml --debug
@@ -24,8 +24,15 @@ services:
       - tts-api
   rasa-actions:
     restart: unless-stopped
-    image: "bsctemu/aina-minibot-actions-server:local"
+    image: "bsctemu/aina-minibot-custom-actions-server:0.0.8"
     expose:
       - "5055"
+    depends_on:
+      - rasa
+  interface:
+    restart: unless-stopped
+    image: "bsctemu/aina-minibot-interface:1.0.0"
+    ports:
+      - "8086:80"
     depends_on:
       - rasa
