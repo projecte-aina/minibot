@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     image: "bsctemu/aina-tts-api:cache-dev1.0"
     expose:
-      - 8000"
+      - "8000"
   stt-server:
     restart: unless-stopped
     image: "assistent/kaldi-catala:0.0.4"
@@ -35,10 +35,10 @@ services:
       - "5055"
     depends_on:
       - rasa
-#  interface:
-#    restart: unless-stopped
-#    image: "bsctemu/aina-minibot-interface:1.0.2"
-#    ports:
-#      - "8004:80"
-#    depends_on:
-#      - rasa
+  interface:
+    restart: unless-stopped
+    image: "bsctemu/aina-minibot-interface:1.0.2"
+    ports:
+      - "8004:80"
+    depends_on:
+      - rasa
