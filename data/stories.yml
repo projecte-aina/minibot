@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: salutacio - pregunta - adeu
+- story: salutació - pregunta - adéu
   steps:
   - intent: greet
   - action: action_welcome
@@ -12,7 +12,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: salutacio - pregunta - pregunta - adeu
+- story: salutació - pregunta - pregunta - adéu
   steps:
   - intent: greet
   - action: action_welcome
@@ -24,7 +24,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
   
-- story: salutacio - confirm - pregunta - adeu
+- story: salutació - confirm - pregunta - adéu
   steps:
   - intent: greet
   - action: action_welcome
@@ -36,7 +36,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: salutacio - tot - pregunta - pregunta - adeu
+- story: salutació - tot - pregunta - pregunta - adéu
   steps:
   - intent: greet
   - action: action_welcome
@@ -49,91 +49,3 @@ stories:
   - action: utter_faq
   - intent: goodbye
   - action: utter_goodbye
-
-#- story: com estàs - bé - guai
-  #steps:
-  #- intent: greet
-  #- action: utter_greet
-  #- intent: mood_great
-  #- action: utter_happy
-  
-#- story: com estàs - bé i tu - bé
-  #steps:
-  #- intent: greet
-  #- action: utter_greet
-  #- intent: how_are_you
-  #- action: utter_fine
-
-#- story: happy path 3
-  #steps:
-  #- intent: greet
-  #- action: utter_greet
-  #- intent: how_are_you
-  #- action: utter_fine
-  #- intent: faq
-  #- action: utter_faq
-  #- intent: thank_you
-  #- action: utter_welcome
-  #- intent: goodbye
-  #- action: utter_goodbye
-
-#- story: com estàs - malament - anims - guai - que bé
-  #steps:
-  #- intent: greet
-  #- action: utter_greet
-  #- intent: mood_unhappy
-  #- action: utter_cheer_up
-  #- action: utter_did_that_help
-  #- intent: affirm
-  #- action: utter_happy
-
-#- story: come stàs - malament - anims - trist- adéu
-  #steps:
-  #- intent: greet
-  #- action: utter_greet
-  #- intent: mood_unhappy
-  #- action: utter_cheer_up
-  #- action: utter_did_that_help
-  #- intent: deny
-  #- action: utter_sorry
-  
-#- story: nom - encantat
-  #steps:
-  #- intent: greet
-  #- action: utter_ask_name
-  #- intent: my_name
-  #- slot_was_set:
-    #- user_name
-  #- action: utter_encantat  
-  
-#- story: nom - encantat com estàs - estic bé - genial
-  #steps:
-  #- intent: greet
-  #- action: utter_ask_name
-  #- intent: my_name
-  #- slot_was_set:
-    #- user_name
-  #- action: utter_encantat  
-  #- intent: mood_great
-  #- action: utter_happy
-
-#- story: nom - encantat com estàs - estic malament - ànims
-  #steps:
-  #- intent: greet
-  #- action: utter_ask_name
-  #- intent: my_name
-  #- slot_was_set:
-    #- user_name
-  #- action: utter_encantat  
-  #- intent: mood_unhappy
-  #- action: utter_cheer_up
-  #- action: utter_did_that_help
-  #- intent: deny
-  #- action: utter_sorry
-
-  
-#- story: praise
-  #steps:
-  #- intent: praise
-  #- action: utter_praise
-  
