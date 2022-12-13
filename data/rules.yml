@@ -2,94 +2,68 @@ version: "3.1"
 
 rules:
 
-- rule: greet
+- rule: saluda
   steps:
   - intent: greet
   - action: action_welcome
   - action: utter_greet
 
-
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: Acomiada't
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Explica que ets un bot
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-  
-#- rule: praise
-  #steps:
-  #- intent: praise
-  #- action: utter_praise
 
-- rule: thank you
+- rule: Respon a les gràcies
   steps:
   - intent: thank_you
   - action: utter_welcome
   
-- rule: insult
+- rule: Respon als insults
   steps:
   - intent: insult
   - action: utter_insult
   
-- rule: digues l'hora
+- rule: Digues l'hora
   steps:
   - intent: hora
   - action: action_tell_catalan_time
   
-- rule: disculpa't quan s'enfaden
+- rule: Disculpa't quan s'enfaden
   steps:
   - intent: frustracio
-  - action: utter_frustracio
-#- rule: respon com estàs
-  #steps:
-  #- intent: how_are_you
-  #- action: utter_fine
-
-#- rule: respon nom
-  #steps:
-  #- intent: your_name
-  #- action: utter_name
+  - action: utter_sorry
  
-- rule: digues encantat quan et diuen el nom
+- rule: Digues encantat quan et diuen el nom
   steps:
   - intent: my_name
   - action: utter_my_name
 
-- rule: respon les faqs
+- rule: Respon les FAQs
   steps:
   - intent: faq
   - action: utter_faq
 
-- rule: respon out_of_scope
+- rule: Respon a les preguntes no pertinents
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
   
-- rule: fallback
+- rule: Avisa que no ho estàs ententent.
   steps:
   - intent: nlu_fallback
   - action: utter_fallback
   
-- rule: chitchat
+- rule: Respon al chitchat
   steps:
   - intent: chitchat
   - action: utter_chitchat
   
-- rule: tot
+- rule: Demana que sigui més específic
   steps:
   - intent: tot
   - action: utter_tot
-
-#- rule: happy mood
-  #steps:
-  #- intent: mood_great
-  #- action: utter_happy
-  
-#- rule: unhappy mood
-  #steps:
-  #- intent: mood_unhappy
-  #- action: utter_cheer_up

@@ -17,10 +17,12 @@ nlu:
     - Uep! Com anam
     - Ei, com va
     - hola
-    - hola
     - Hola bona nit! Fa fresqueta eh?
     - Hola
-    - Hola?
+    - hola, hola
+    - salut
+    - déu vos guard
+    - ave maria puríssima
     
 - intent: goodbye
   examples: |
@@ -57,10 +59,11 @@ nlu:
     - val
     - vale
     - ok
-    - oc
+    - òc
     - oquei
     - afirmatiu
     - clar
+    - oi
 
 - intent: deny
   examples: |
@@ -144,6 +147,7 @@ nlu:
     - [catalunya](LOC) independent
     - som un poble
     - Què fas aquesta nit
+    - a quina hora plegues
     
 - intent: frustracio
   examples: |
@@ -151,6 +155,11 @@ nlu:
     - no m'entens
     - això ja ho has dit
     - no funciones bé
+    - no m'entens quan et parlo
+    - no t'estic preguntant això
+    - no és això el que et pregunto
+    - no m'estàs entenent
+    - no ho estàs fent gens bé
     
 - intent: tot
   examples: |
@@ -165,6 +174,11 @@ nlu:
     - em sento bé
     - estic genial
     - bé, gràcies
+    - estic molt bé
+    - doncs mira, anar fent
+    - anar tirant
+    - anem fent
+    - anem tirant
 
 - intent: chitchat/mood_unhappy
   examples: |
@@ -174,6 +188,10 @@ nlu:
     - de pena
     - em vull morir
     - psè
+    - no gaire bé
+    - malament
+    - gens bé
+    - molt trist
     
 - intent: my_name
   examples: |
@@ -203,6 +221,11 @@ nlu:
     - que has nom
     - Tu com et dius
     - com te dius
+    - què noms
+    - quin nom tens
+    - quin nom t'han posat
+    - com t'han batejat
+    - t'han batejat
     
 - intent: chitchat/mes_preguntes
   examples: |
@@ -211,6 +234,11 @@ nlu:
     - et vull preguntar més coses
     - t'he de preguntar una altra cosa
     - tinc més preguntes
+    - puc preguntar-te més coses
+    - vull preguntar-te més coses
+    - t'he de preguntar més coses
+    - encara tinc més preguntes
+    - et puc fer més preguntes
     
 - intent: chitchat/praise
   examples: |
@@ -223,6 +251,7 @@ nlu:
     - ho fas molt bé
     - caram, que guai
     - ets molt [bufó](pos)
+    - m'agrades molt
     
 - intent: chitchat/how_are_you
   examples: |
@@ -233,6 +262,7 @@ nlu:
     - i tu
     - com va
     - com anem
+    - com vas
     
 - intent: faq/aina
   examples: |
@@ -242,6 +272,7 @@ nlu:
     - què és aina
     - qui és Aina
     - què me'n pots explicar del projecte aina
+    - explica'm el projecte aina
     
 - intent: faq/objectius
   examples: |
@@ -271,12 +302,12 @@ nlu:
     - què s’està generant en el projecte
     - què s’està creant en el projecte
     - I com jo fareu
-    - Com penseu aconseguir el vostre objectiu?
+    - Com penseu aconseguir el vostre objectiu
     - Com voleu impular la intel·ligència artificial
-    - I com ho fareu?
-    - Com ho faig?
-    - què es vol crear en català?
-    - Què feu exactament dins del projecte?
+    - I com ho fareu
+    - què es vol crear en català
+    - Què feu exactament dins del projecte
+    - com aconseguireu aquest objectiu
 
 - intent: faq/finan
   examples: |
@@ -290,6 +321,12 @@ nlu:
     - quant n'estem pagant
     - Quant val?
     - quant ens costa
+    - quants diners hi han posat
+    - quants diners costa
+    - val gaires diners
+    - quants calés ens costa la borma
+    - val molts calés
+    - quants calés ens hi hem deixat
     
 - intent: faq/qui_finan
   examples: |
