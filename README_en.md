@@ -1,6 +1,5 @@
 # minibot
 
-_For English [here](README_en.md)_
 
 Aquest repositori és un demostrador de com es poden crear experiències
 conversacionals en català, utilitzant tecnologies lingüístiques lliures. 
@@ -64,6 +63,13 @@ rasa shell
 ## Documentació
 * [laguage support](https://rasa.com/docs/rasa/language-support/)
 * [installation](https://rasa.com/docs/rasa/installation/)
+
+
+## Install required models
+
+```bash 
+python -m pip install --no-cache-dir --upgrade -r models_requirements.txt
+```
 
 ## Build rasa docker image
 
