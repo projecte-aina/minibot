@@ -30,7 +30,7 @@ nlu:
     - passi-ho bé
     - dew
     - a10
-    - bassa un bon dia
+    - passa un bon dia
     - goodbye
     - ciao
     - chao
@@ -41,7 +41,7 @@ nlu:
     - a la pròxima
     - ens veiem
     - ja parlem
-    - ad´eu
+    - adéu
     - al cop que ve
 
 - intent: affirm
@@ -84,6 +84,11 @@ nlu:
     - merces
     - thanks
     - t'ho agraeixo
+    - d'acord, gràcies
+    - molt bé, gràcies
+    - val, moltes gràcies
+    - que bé, gràcies
+    - moltes mercès
     
 - intent: hora
   examples: |
@@ -173,7 +178,6 @@ nlu:
     - estic bé
     - em sento bé
     - estic genial
-    - bé, gràcies
     - estic molt bé
     - doncs mira, anar fent
     - anar tirant
