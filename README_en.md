@@ -1,6 +1,5 @@
 # minibot
 
-_For English [here](README_en.md)_
 
 Aquest repositori és un demostrador de com es poden crear experiències
 conversacionals en català, utilitzant tecnologies lingüístiques lliures. 
