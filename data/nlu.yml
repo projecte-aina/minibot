@@ -68,7 +68,7 @@ nlu:
 - intent: deny
   examples: |
     - no
-    - en absoult
+    - en absolut
     - never
     - no ho crec
     - crec que no
@@ -307,7 +307,7 @@ nlu:
     - què s’està creant en el projecte
     - I com jo fareu
     - Com penseu aconseguir el vostre objectiu
-    - Com voleu impular la intel·ligència artificial
+    - Com voleu impulsar la intel·ligència artificial
     - I com ho fareu
     - què es vol crear en català
     - Què feu exactament dins del projecte
@@ -328,7 +328,7 @@ nlu:
     - quants diners hi han posat
     - quants diners costa
     - val gaires diners
-    - quants calés ens costa la borma
+    - quants calés ens costa la broma
     - val molts calés
     - quants calés ens hi hem deixat
     
@@ -374,7 +374,7 @@ nlu:
     - s'acabarà algun dia
     - quant dura
     - quant de temps està previst que duri el projecte
-    - uan s’acabarà el projecte
+    - quan s’acabarà el projecte
     
 - intent: faq/resultats
   examples: |
@@ -398,7 +398,7 @@ nlu:
     - què heu fet amb la pasta
     - Quan hi haurà els primers resultats 
     - Quan tindreu els primers assistents personals 
-    - Quan veurem els primers resultars 
+    - Quan veurem els primers resultats 
     - quan podrem fer servir els resultats
     - On són els resultats
     - on puc trobar els resultats d'aina?
@@ -469,7 +469,7 @@ nlu:
     - per què em serveix l’aina
     - què m’arregla a mi el projecte aina
     - a mi com m’ajudarà aquest projecte
-    - I per què tants diner    
+    - I per què tants diners  
     
 - intent: faq/perque_ia
   examples: |
@@ -578,7 +578,7 @@ nlu:
     - Quina ètica té la intel·ligència artificial
     - Quins són els biaixos de Aina
     - Com s’avaluen els biaixos dels models de llenguatge
-    - la intel·ligència aritficial és racista
+    - la intel·ligència artificial és racista
     - què feu perquè els vostres models no siguin racistes
     - que feu per evitar que els vostres models siguin fatxes
   
@@ -647,7 +647,7 @@ nlu:
   examples: |
     - què és el [bsc](bsc)    
     - que hi pinta el [barcelona supercomputing center](bsc)
-    - per qué es fa al [bsc-cns]](bsc)
+    - per què es fa al [bsc-cns]](bsc)
     - per què es fa al [centro nacional de supercomputación](bsc)
     - què és el [barcelona supercomputing center](bsc)
     - per què el [centre de supercomputació](bsc)
@@ -693,7 +693,7 @@ nlu:
   examples: |
     - Com s’ha avaluat la licitació d’AINA
     - Què és la licitació
-    - per què heu feu licitacions
+    - per què heu fet licitacions
     - quin era l’objectiu de les licitacions
     - com s’han fet les licitacions
   

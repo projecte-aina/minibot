@@ -77,7 +77,7 @@ responses:
   - text: "Soc un bot de demostració del projecte AINA, desenvolupat amb Rasa per la Unitat de mineria de textos del Barcelona Supercomputing Center. Puc respondre algunes preguntes sobre el projecte."
   
   utter_sorry:
-  - text: "Ostres, em sap greu, em sembla que no t'estic entent bé. Pots mirar de fer la pregunta amb unes altres paraules?"
+  - text: "Ostres, em sap greu, em sembla que no t'estic entenent bé. Pots mirar de fer la pregunta amb unes altres paraules?"
   - text: "Vaja, potser no ho estic fent prou bé... pots intentar preguntar amb unes altres paraules?"
   
   utter_insult:
@@ -175,7 +175,7 @@ responses:
   - text: "La intel·ligència artificial és el desenvolupament d'algorismes que permeten que una màquina es comporti com si tingués una intel·ligència semblant a la humana. El projecte AINA treballa en un subcamp de la intel·ligència artificial que es diu processament del llenguatge natural."
   
   utter_faq/perque:
-  - text: "Els models d'intel·ligència artificial que depenen de l'idioma són molt costosos de desenvolupar, i sovint les empreses deixen de banda les llengües amb menys parlants perquè consideren que no els surt a compte invertir-hi. Convé doncs que les les administracions públiques els financiïn, per garantir que els ciutadans que parlen aquestes llengües tinguin els mateixos drets que la resta."
+  - text: "Els models d'intel·ligència artificial que depenen de l'idioma són molt costosos de desenvolupar, i sovint les empreses deixen de banda les llengües amb menys parlants perquè consideren que no els surt a compte invertir-hi. Convé doncs que les administracions públiques els financiïn, per garantir que els ciutadans que parlen aquestes llengües tinguin els mateixos drets que la resta."
 
   utter_faq/perque_ia:
   - text: "La intel·ligència artificial pot ajudar les persones a viure més fàcilment en el seu dia a dia, per això cal vetllar perquè tothom hi tingui accés en igualtat de condicions."
@@ -203,7 +203,7 @@ responses:
   - text: "Dins del projecte tractem amb diverses dades, tant textuals com de veu.\nEls corpus són conjunts de dades relativament grans, i els datasets, conjunts de dades anotades per una tasca específica. Amb aquests dos tipus de dades podem entrenar els models.\nUn model, en canvi, és la implementació d'un algoritme que permet prendre decisions lògiques a partir de les dades disponibles."
   
   utter_faq/perill:
-  - text: "Com totes les tecnologies, la intel·lgència artificial pot tenir certs riscos associats. Des del projecte AINA en som molt conscients i treballem per minimitzar-ne els riscos mentre procurem que els avantatges siguin disponibles per a tothom."
+  - text: "Com totes les tecnologies, la intel·ligència artificial pot tenir certs riscos associats. Des del projecte AINA en som molt conscients i treballem per minimitzar-ne els riscos mentre procurem que els avantatges siguin disponibles per a tothom."
   
   utter_faq/biaixos:
   - text: "La intel·ligència artificial reprodueix tasques humanes aprenent d'exemples reals. Per això pot ser que aprengui biaixos que existeixen en la societat o que emeti llenguatge ofensiu. Des del projecte AINA estem treballant per reduir aquests riscos."
@@ -248,7 +248,7 @@ responses:
   - text: "El projecte AINA treballa per assegurar la pervivència del català en un àmbit molt concret: el de la intel·ligència artificial."
   
   utter_faq/your_use:
-  - text: "Puc respondre agunes preguntes relacionades amb el projecte AINA."
+  - text: "Puc respondre algunes preguntes relacionades amb el projecte AINA."
   - text: "Responc preguntes sobre el projecte AINA"
   
 actions:

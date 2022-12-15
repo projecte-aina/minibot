@@ -15,7 +15,7 @@ services:
     image: "bsctemu/aina-minibot:1.0.6"
     ports:
       - "5005:5005"
-    command: run --credentials credentials.yml --model latest-model.tar.gz --endpoints endpoints.yml --debug
+    command: run --credentials credentials.yml --model ./models --endpoints endpoints.yml --debug
     volumes:
       - ./data:/app/data
       - ./models:/app/models
@@ -35,10 +35,10 @@ services:
       - "5055"
     depends_on:
       - rasa
-  interface:
-    restart: unless-stopped
-    image: "bsctemu/aina-minibot-interface:1.0.4"
-    ports:
-      - "8004:80"
-    depends_on:
-      - rasa
+#  interface:
+#    restart: unless-stopped
+#    image: "bsctemu/aina-minibot-interface:1.0.4"
+#    ports:
+#      - "8004:80"
+#    depends_on:
+#      - rasa
