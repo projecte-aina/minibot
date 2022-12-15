@@ -576,7 +576,7 @@ nlu:
     - Perquè insulten els models de llenguatge
     - Són ètics els models de llenguatge
     - Quina ètica té la intel·ligència artificial
-    - Quins són els biaixos de Aina
+    - Quins són els biaixos d'Aina
     - Com s’avaluen els biaixos dels models de llenguatge
     - la intel·ligència artificial és racista
     - què feu perquè els vostres models no siguin racistes
@@ -656,7 +656,7 @@ nlu:
   examples: |
     - esteu treballant en l'exèrcit de robots d'en Puigneró
     - són certs els informes de la guardia civil
-    - Els robots d’en Puigneró parlaràn Català
+    - Els robots d’en Puigneró parlaran Català
     - esteu fent robots de guerra
     - és veritat que el puigneró està fent robots de guerra
     - robots de guerra

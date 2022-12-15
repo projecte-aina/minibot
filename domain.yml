@@ -59,9 +59,9 @@ responses:
   - text: "Com et dius?"
   
   utter_greet:
-  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot.\nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols fer-me alguna pregunta sobre el projecte AINA?"
-  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols saber alguna cosa sobre el projecte AINA?"
-  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construit amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Si tens alguna pregunta sobre el projecte AINA, puc mirar de respondre't."
+  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot.\nM'han construït amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols fer-me alguna pregunta sobre el projecte AINA?"
+  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construït amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Vols saber alguna cosa sobre el projecte AINA?"
+  - text: "Soc el bot del projecte AINA. Soc una demostració de com es pot incorporar veu a un xatbot. \nM'han construït amb Rasa i m'han incorporat un component per interpretar i generar veu. Si t'interessa, pots descarregar-te el meu codi des de l'enllaç que trobaràs al web de la demo. Si tens alguna pregunta sobre el projecte AINA, puc mirar de respondre't."
   
   utter_ask:
   - text: "Què vols saber en concret?"
@@ -141,7 +141,7 @@ responses:
   - text: "Mitjançant el projecte AINA estem generant corpus i models informàtics de la llengua catalana i els posem a disposició de tothom, de manera que les empreses, grups de recerca o col·lectius que creen aplicacions basades en la intel·ligència artificial, com ara assistents de veu, cercadors d'Internet, traductors i correctors automàtics, etcètera, puguin fer-ho fàcilment en català.\nTambé col·laborem amb la recerca en intel·ligència artificial en català, i treballem per situar el català en projectes internacionals."
 
   utter_faq/finan:
-  - text: "La Generalitat de Catalunya va finançar el projecte AINA el 2022 amb tres milions d'Euros. Està previst que el finançament segueixi fins el 2026 amb un total de 12 milions d'euros."
+  - text: "La Generalitat de Catalunya va finançar el projecte AINA el 2022 amb tres milions d'Euros. Està previst que el finançament segueixi fins al 2026 amb un total de 12 milions d'euros."
   
   utter_faq/qui_finan:
   - text: "Actualment el projecte està finançat per la Generalitat de Catalunya. D'altra banda, segons es va publicar recentment, el Govern espanyol també finançarà AINA i les tecnologies en les altres llengües de l'Estat durant els propers 3 anys."
@@ -175,7 +175,7 @@ responses:
   - text: "La intel·ligència artificial és el desenvolupament d'algorismes que permeten que una màquina es comporti com si tingués una intel·ligència semblant a la humana. El projecte AINA treballa en un subcamp de la intel·ligència artificial que es diu processament del llenguatge natural."
   
   utter_faq/perque:
-  - text: "Els models d'intel·ligència artificial que depenen de l'idioma són molt costosos de desenvolupar, i sovint les empreses deixen de banda les llengües amb menys parlants perquè consideren que no els surt a compte invertir-hi. Convé doncs que les administracions públiques els financiïn, per garantir que els ciutadans que parlen aquestes llengües tinguin els mateixos drets que la resta."
+  - text: "Els models d'intel·ligència artificial que depenen de l'idioma són molt costosos de desenvolupar, i sovint les empreses deixen de banda les llengües amb menys parlants perquè consideren que no els surt a compte invertir-hi. Convé doncs que les administracions públiques els financin, per garantir que els ciutadans que parlen aquestes llengües tinguin els mateixos drets que la resta."
 
   utter_faq/perque_ia:
   - text: "La intel·ligència artificial pot ajudar les persones a viure més fàcilment en el seu dia a dia, per això cal vetllar perquè tothom hi tingui accés en igualtat de condicions."
@@ -191,13 +191,13 @@ responses:
   - text: "La intel·ligència artificial fa que les màquines es comportin com si fossin intel·ligents, però això no les converteix en éssers pensants o sensibles. Si més no, no actualment."
   
   utter_faq/collaboradors:
-  - text: "El projecte AINA col·labora amb moltes entitats rellevants del territori, des d'empreses fins a entitats sense ànim de lucre. És pot trobar més informació a la pàgina del projecte."
+  - text: "El projecte AINA col·labora amb moltes entitats rellevants del territori, des d'empreses fins a entitats sense ànim de lucre. Es pot trobar més informació a la pàgina del projecte."
   
   utter_faq/stt:
   - text: "Per ajudar a les tasques de transcripció, el projecte AINA està desenvolupant l'eina oTranscribe plus. És una aplicació de web i d'escriptori que fa les transcripcions amb els recursos del propi ordinador, per això és un servei gratuït i privat. Podeu trobar l'aplicació a l'adreça otranscribe.bsc.es."
   
   utter_faq/despres:
-  - text: "Quan el projecte s'hagi acabat, tot el que haurem desenvolupat seguirà disponible, perquè ho estem publicant als portals de referència amb llicències permisives. Així, ho pot utilitzar tothom qui ho vulgui, sigui ara o més endavant."
+  - text: "Quan el projecte s'hagi acabat, tot el que haurem desenvolupat seguirà disponible, perquè ho estem publicant als portals de referència amb llicències permissives. Així, ho pot utilitzar tothom qui ho vulgui, sigui ara o més endavant."
   
   utter_faq/corpus:
   - text: "Dins del projecte tractem amb diverses dades, tant textuals com de veu.\nEls corpus són conjunts de dades relativament grans, i els datasets, conjunts de dades anotades per una tasca específica. Amb aquests dos tipus de dades podem entrenar els models.\nUn model, en canvi, és la implementació d'un algoritme que permet prendre decisions lògiques a partir de les dades disponibles."
@@ -221,7 +221,7 @@ responses:
   - text: "Des del projecte AINA no estem construint armes de guerra, però sí que estem creant eines per ajudar a combatre la desinformació."
   
   utter_faq/marenostrum:
-  - text: "El MareNostrum és el superordinador més potent de l'estat espanyol i un dels més potents d'Europa en quant a capacitat d'operacions en coma flotant per segon."
+  - text: "El MareNostrum és el superordinador més potent de l'estat espanyol i un dels més potents d'Europa quant a capacitat d'operacions en coma flotant per segon."
   
   utter_faq/models:
   - text: "Un model de llenguatge és un programa informàtic entrenat per actuar com si entengués el llenguatge humà. Aquest procés d'entrenament es fa utilitzant grans conjunts de dades. \nEs poden distingir dues fases: la fase de pre-entrenament, en què l'entrenament se centra en una comprensió general de la llengua, i el procés d'entrenament específic, en què es focalitza l'entrenament en una tasca concreta, com ara classificació de textos, anàlisi de sentiment o anàlisi morfològica."
@@ -230,7 +230,7 @@ responses:
   - text: "El Bloom és el primer model generatiu d'intel·ligència artificial lliure i multilingüe. Es tracta d'un model que ha estat possible gràcies a la col·laboració de centenars de grups d'investigació d'arreu del món, entre ells, també hi trobem la participació del Projecte AINA, que ha permès que el català sigui una de les 59 llengües que el conformen."
   
   utter_faq/catala:
-  - text: "El català és una llengua romànica parlada a Catalunya, les Illes Balears, en bona part del País Valencià, Andorra, la Catalunya Nord, la franja d'Aragó, el Carxe i la ciutat de l'Alguer. Té uns deu milions de parlants, dels quals gairebé la meitat ho són de llengua materna."
+  - text: "El català és una llengua romànica parlada a Catalunya, les Illes Balears, en bona part del País Valencià, Andorra, la Catalunya del Nord, la franja d'Aragó, el Carxe i la ciutat de l'Alguer. Té uns deu milions de parlants, dels quals gairebé la meitat ho són de llengua materna."
  
   utter_faq/licitacio:
   - text: "Com que necessitem molts corpus anotats, el BSC va treure a licitació el servei de creació i anotació de conjunts de dades que es requereixen per entrenar, adaptar i avaluar models aptes per a tasques específiques, com ara la transcripció i traducció automàtiques, la generació de resums, la detecció de sentiment, les descripcions d'escena, etc. Aquesta licitació va incloure 9 lots.\nLes ofertes presentades han estat seleccionades i avaluades, i s'han adjudicat els contractes a aquelles que compleixen la millor relació qualitat preu."
