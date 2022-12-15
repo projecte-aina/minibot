@@ -35,10 +35,10 @@ services:
       - "5055"
     depends_on:
       - rasa
-#  interface:
-#    restart: unless-stopped
-#    image: "bsctemu/aina-minibot-interface:1.0.4"
-#    ports:
-#      - "8004:80"
-#    depends_on:
-#      - rasa
+  interface:
+    restart: unless-stopped
+    image: "bsctemu/aina-minibot-interface:1.0.4"
+    ports:
+      - "8004:80"
+    depends_on:
+      - rasa
