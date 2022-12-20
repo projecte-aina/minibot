@@ -1,5 +1,12 @@
 version: '3.9'
 services:
+  mongo:
+    image: mongo
+    expose:
+      - "27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rasa
+      MONGO_INITDB_ROOT_PASSWORD: example
   tts-api:
     restart: unless-stopped
     image: "bsctemu/aina-tts-api:cache-dev1.0"
@@ -28,6 +35,7 @@ services:
     depends_on:
       - stt-server
       - tts-api
+      - mongo
   rasa-actions:
     restart: unless-stopped
     image: "bsctemu/aina-minibot-custom-actions-server:0.0.8"

@@ -3,3 +3,6 @@ venv
 .rasa
 **/__pycache__/
 *.pyc
+docker-compose.override.yml
+secret-endpoints.yml
+.env
