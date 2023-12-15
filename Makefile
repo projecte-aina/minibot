@@ -1,5 +1,5 @@
 deploy:
-	docker compose up --build -d
+	docker compose --env-file .env up --build
 undeploy:
 	docker compose down
 stop:

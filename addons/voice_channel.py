@@ -1,12 +1,13 @@
+import json
 import logging
+from urllib import request
 import uuid
 import base64
 from typing import Any, Awaitable, Callable, Dict, Iterable, List, Optional, Text
 
 import os
 import urllib
-from urllib.request import urlopen, Request
-from urllib.parse import urlencode
+
 
 from rasa.core.channels.channel import InputChannel, UserMessage, OutputChannel
 from rasa.core.channels.socketio import SocketBlueprint
@@ -48,17 +49,28 @@ class SocketIOVoiceOutput(OutputChannel):
         """Sends a message to the recipient using the bot event."""
 
         if response.get("text"):
-            q = {
-                'text': response['text']
+            data = {
+                'text': response['text'],
+                'type': 'text'
             }
             if self.tts_voice:
-                q['speaker_id'] = self.tts_voice
+                data['voice'] = self.tts_voice
             else:
-                q['speaker_id'] = "pau"
+                data['voice'] = "pau"
+            
+            audioEndpoint = f"{self.tts_url}/api/tts"
 
-            audioEndpoint = f"{self.tts_url}/api/tts?{urlencode(q)}"
+            req = request.Request(audioEndpoint, method="POST")
+            req.add_header('Content-Type', 'application/json')
+
+            data = json.dumps(data)
+            data = data.encode()
+            
+            r = request.urlopen(req, data=data)
+            audio = r.read()
+
             logger.info(audioEndpoint)
-            audio = urlopen(audioEndpoint).read()
+
             logger.debug(f"_send_message- Calling Speech Endpoint: {audioEndpoint}")
 
             audioBase64 = base64.b64encode(audio).decode('ascii')

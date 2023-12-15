@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+		/>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-051RVJ2TWD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-051RVJ2TWD');
+        </script>
+		<script src="https://cdn.jsdelivr.net/gh/projecte-aina/Recorderjs@45f9626/dist/recorder.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+		<link rel="icon" href="<%= BASE_URL %>favicon.png" />
+		<title>Aina Bot</title>
+
+		<style>
+			html,
+			body {
+				margin: 0 0 0 0;
+				width: 100%;
+				height: 100%;
+				min-height: 100%;
+				overflow: hidden;
+			}
+            .footer-custom-images {
+                padding-bottom: 4em;
+                display: flex;
+                place-content: space-around;
+                align-content: center;
+                box-sizing: border-box;
+            }
+
+            .footer-custom-images img {
+                max-height: 5em;
+                margin: 0.5rem 0;
+                width: auto;
+            }
+
+            .footer-custom-images a {
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+		</style>
+	</head>
+
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but chatbot doesn't work properly without JavaScript enabled.
+				Please enable it to continue.</strong
+			>
+		</noscript>
+		<div style="height: 89%; width: 100%; position: relative;"><div id="app"></div></div>
+        <div class="footer-custom-images">
+            <a target="_blank" title="Generalitat de Catalunya" href="https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina/"><img alt="Generalitat logo" src="/logos/gene.png"></a>
+            <a target="_blank" title="Barcelona Supercomputing Center" href="https://www.bsc.es"><img alt="BSC logo" src="/logos/BSC-blue-small.png"></a>
+        </div>
+		<!-- built files will be auto injected -->
+	</body>
+</html>

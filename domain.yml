@@ -147,7 +147,7 @@ responses:
   - text: "Actualment el projecte està finançat per la Generalitat de Catalunya. D'altra banda, segons es va publicar recentment, el Govern espanyol també finançarà AINA i les tecnologies en les altres llengües de l'Estat durant els propers 3 anys."
   
   utter_faq/gent:
-  - text: "La unitat de Text Mining del Barcelona Supercomputing Center s'ocupa de la part tècnica del projecte."
+  - text: "La unitat de Language Technologies del Barcelona Supercomputing Center s'ocupa de la part tècnica del projecte."
   
   utter_faq/temps:
   - text: "L'AINA va començar el 2020 i té una durada prevista de 4 anys."

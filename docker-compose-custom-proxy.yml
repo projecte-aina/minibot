@@ -4,8 +4,10 @@ services:
   tts-api:
     image: projecteaina/tts-api:76c49e22a70d52fc7cf7a7fc379b7cb98fd5ff76
     restart: unless-stopped
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
+    networks:
+      - minibot-network
     environment:
       - SPEECH_SPEED=${TTS_SPEECH_SPEED}
       - MP_WORKERS=${TTS_MP_WORKERS}
@@ -20,17 +22,23 @@ services:
     image: "assistent/kaldi-catala:0.0.4"
     expose:
       - "5001"
+    networks:
+      - minibot-network
     deploy:
       resources:
         limits:
           memory: ${STT_MEM_LIMIT}
 
   rasa:
+    container_name: minibot-rasa
     build: 
       context: .
     restart: unless-stopped
-    ports:
-      - "5005:5005"
+    expose:
+      - "5005"
+    networks:
+      - proxy-net
+      - minibot-network
     command: run --credentials credentials.yml --model ./models --endpoints endpoints.yml --debug
     volumes:
       - ./data:/app/data
@@ -46,11 +54,14 @@ services:
       - tts-api
 
   rasa-actions:
+    container_name: minibot-rasa-actions
     build: 
       context: ./actions
     restart: unless-stopped
     expose:
       - "5055"
+    networks:
+      - minibot-network
     depends_on:
       - rasa
       
@@ -62,8 +73,17 @@ services:
       dockerfile: docker/Dockerfile
     environment:
       - VUE_RASA_APP_PUBLIC_URL=${VUE_RASA_APP_PUBLIC_URL}
-    ports:
-      - "8004:80"
+    expose:
+      - "80"
+    networks:
+      - proxy-net
     depends_on:
       - rasa
       - rasa-actions
+
+
+networks:
+  proxy-net:
+    external: true
+    name: proxy-net
+  minibot-network:

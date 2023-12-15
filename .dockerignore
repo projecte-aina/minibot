@@ -1,12 +1,12 @@
-.idea
 .rasa
-__pycache_
+**/__pycache_
 **/.git
 **/.gitignore
 **/.vscode
 **/coverage
 **/.env
 **/.ssh
+rasa-voice-interface
 Dockerfile
 README.md
 docker-compose.yml
