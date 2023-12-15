@@ -1,4 +1,4 @@
-# About Minibot
+# About
 
 Minibot is a demonstration of how conversational experiences can be created in Catalan using open-source language technologies.
 
