@@ -2,7 +2,7 @@ version: '3.9'
 services:
 
   tts-api:
-    image: projecteaina/tts-api:76c49e22a70d52fc7cf7a7fc379b7cb98fd5ff76
+    image: projecteaina/tts-api:ca651548417406b296a52f6d6a6e18f2926b3f69
     restart: unless-stopped
     expose:
       - "8000"
